@@ -1,0 +1,43 @@
+import Link from "next/link";
+
+type ButtonProps = {
+  variant: "accent" | "outline";
+  href?: string;
+  children: React.ReactNode;
+  className?: string;
+};
+
+const base =
+  "inline-flex items-center justify-center px-5 py-3 text-center text-sm font-medium sm:text-base";
+
+const variants: Record<ButtonProps["variant"], string> = {
+  accent:
+    "border border-okb-accent bg-okb-accent text-okb-bg hover:border-okb-accent-h hover:bg-okb-accent-h",
+  outline:
+    "border border-okb-border text-okb-text hover:border-okb-accent",
+};
+
+export function Button({
+  variant,
+  href,
+  children,
+  className,
+}: ButtonProps) {
+  const classes = [base, variants[variant], className ?? ""]
+    .filter(Boolean)
+    .join(" ");
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <button type="button" className={classes}>
+      {children}
+    </button>
+  );
+}

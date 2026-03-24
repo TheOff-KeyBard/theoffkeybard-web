@@ -1,0 +1,35 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen bg-okb-bg text-okb-text antialiased;
+  }
+}
+
+@layer components {
+  .okb-h1 {
+    @apply font-serif text-4xl font-bold text-okb-text md:text-5xl;
+  }
+  .okb-h2 {
+    @apply font-serif text-2xl font-semibold text-okb-text md:text-3xl;
+  }
+  .okb-h3 {
+    @apply font-serif text-xl font-semibold text-okb-text;
+  }
+  .okb-body {
+    @apply text-base leading-7 text-okb-muted;
+  }
+  .okb-hero-intro {
+    @apply text-lg leading-8 text-okb-text;
+  }
+  .okb-meta {
+    @apply text-sm text-okb-faint;
+  }
+}
