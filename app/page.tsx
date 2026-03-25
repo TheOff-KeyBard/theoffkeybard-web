@@ -9,18 +9,17 @@ export default function HomePage() {
       <section className="bg-okb-bg py-16 md:py-24">
         <Container size="hero" className="space-y-6 text-center sm:text-left">
           <h1 className="okb-h1">
-            Where history, fantasy, and firelight meet
+            Enter the city that remembers you
           </h1>
           <p className="okb-hero-intro mx-auto sm:mx-0">
-            Sharp storytelling, original worlds, and bardic commentary from The
-            Off-Key Bard.
+            Verasanth is not a place you visit. It is a place that keeps you.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-            <Button variant="accent" href="/tales">
-              Read the Tales
-            </Button>
-            <Button variant="outline" href="/verasanth">
+            <Button variant="accent" href="/verasanth">
               Enter Verasanth
+            </Button>
+            <Button variant="outline" href="/tales">
+              Read the Tales
             </Button>
           </div>
         </Container>
@@ -28,21 +27,17 @@ export default function HomePage() {
 
       <section className="bg-okb-bg-elevated py-16 md:py-24">
         <Container className="space-y-6">
-          <SectionHeading title="What Is OKB" />
           <div className="space-y-4">
             <p className="okb-body">
-              Some people read history for dates and battles. Some read fantasy
-              for dragons and destiny. The Off-Key Bard reads both — and then
-              asks what they were actually about.
+              Verasanth is a city built over something older than the structures
+              above it. The guilds, the sewers, the firelight — all of it is
+              maintenance. All of it is containment.
             </p>
+            <p className="okb-body">The Tales are what leak out.</p>
             <p className="okb-body">
-              This is a site for stories told sideways. History through a bardic
-              lens. Fantasy grounded in real human stakes. Commentary that
-              doesn&apos;t mistake cleverness for wisdom, but doesn&apos;t
-              apologize for having a sharp tongue either.
-            </p>
-            <p className="okb-body">
-              Pull up a chair. The fire&apos;s been going a while.
+              Stories from inside the walls. Lore fragments. Rumor and record.
+              The kind of writing that happens when a world starts remembering
+              itself.
             </p>
           </div>
         </Container>
