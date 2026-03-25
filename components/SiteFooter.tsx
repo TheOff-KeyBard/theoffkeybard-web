@@ -5,7 +5,8 @@ export function SiteFooter() {
     <footer className="mt-16 border-t border-okb-border">
       <Container className="py-8 text-center text-sm text-okb-faint">
         <p>
-          The Off-Key Bard {new Date().getFullYear()}
+          <p>The city remembers everything.</p>
+          <p>The Off-Key Bard {new Date().getFullYear()}</p>
         </p>
       </Container>
     </footer>
