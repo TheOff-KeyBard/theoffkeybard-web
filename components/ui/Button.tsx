@@ -9,6 +9,8 @@ type ButtonProps = {
   buttonType?: "button" | "submit";
   disabled?: boolean;
   onClick?: () => void;
+  /** If true with `href`, renders `<a>` with `target="_blank"` and `rel="noopener noreferrer"`. */
+  external?: boolean;
 };
 
 const base =
@@ -29,10 +31,24 @@ export function Button({
   buttonType = "button",
   disabled,
   onClick,
+  external,
 }: ButtonProps) {
   const classes = [base, variants[variant], className ?? ""]
     .filter(Boolean)
     .join(" ");
+
+  if (href && external) {
+    return (
+      <a
+        href={href}
+        className={classes}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
+      </a>
+    );
+  }
 
   if (href) {
     return (

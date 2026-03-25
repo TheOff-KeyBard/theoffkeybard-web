@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { DISCORD_INVITE_URL } from "@/lib/discord";
 import { getAllTales } from "@/lib/tales";
 
 export default function HomePage() {
@@ -111,6 +112,25 @@ export default function HomePage() {
               />
             </li>
           </ul>
+        </Container>
+      </section>
+
+      <section className="bg-okb-bg py-16 md:py-24">
+        <Container className="space-y-6 text-center sm:text-left">
+          <h2 className="okb-h2">Join the Tavern</h2>
+          <p className="okb-body mx-auto max-w-2xl sm:mx-0">
+            A hearth out of the wind. Quiet voices, stray threads of lore, and
+            the sense that something in the city is still listening.
+          </p>
+          <div>
+            <Button
+              variant="outline"
+              href={DISCORD_INVITE_URL}
+              external
+            >
+              Join on Discord
+            </Button>
+          </div>
         </Container>
       </section>
 

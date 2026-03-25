@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { NavLink } from "@/components/NavLink";
 import { Container } from "@/components/ui/Container";
+import { DISCORD_INVITE_URL } from "@/lib/discord";
 
 const nav = [
   { href: "/tales", label: "Tales" },
@@ -24,6 +25,14 @@ export function SiteHeader() {
               {label}
             </NavLink>
           ))}
+          <a
+            href={DISCORD_INVITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-okb-muted hover:text-okb-text"
+          >
+            Discord
+          </a>
         </nav>
       </Container>
     </header>
