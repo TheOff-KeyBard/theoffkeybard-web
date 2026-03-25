@@ -2,8 +2,13 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { getAllTales } from "@/lib/tales";
 
 export default function HomePage() {
+  const allTales = getAllTales();
+  const featuredTale =
+    allTales.find((t) => t.featured) ?? allTales[0] ?? null;
+
   return (
     <div>
       <section className="bg-okb-bg py-16 md:py-24">
@@ -55,12 +60,22 @@ export default function HomePage() {
       <section className="bg-okb-bg py-16 md:py-24">
         <Container className="space-y-6">
           <SectionHeading title="From the Archives" />
-          <div className="border border-dashed border-okb-border bg-okb-bg px-6 py-10 text-center">
-            <p className="okb-body">
-              The Archive is never empty. You just haven&apos;t found what
-              it&apos;s willing to show you yet.
-            </p>
-          </div>
+          {featuredTale ? (
+            <Card
+              className="bg-okb-bg"
+              title={featuredTale.title}
+              excerpt={featuredTale.excerpt}
+              href={`/tales/${featuredTale.slug}`}
+              tag={featuredTale.tag}
+            />
+          ) : (
+            <div className="border border-dashed border-okb-border bg-okb-bg px-6 py-10 text-center">
+              <p className="okb-body">
+                The Archive is never empty. You just haven&apos;t found what
+                it&apos;s willing to show you yet.
+              </p>
+            </div>
+          )}
         </Container>
       </section>
 
