@@ -1,6 +1,9 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { ExploreTable } from "@/components/ui/ExploreTable";
+import { HeroEnterVerasanth } from "@/components/ui/HeroEnterVerasanth";
 import { HeroText } from "@/components/ui/HeroText";
 import { RotatingLine } from "@/components/ui/RotatingLine";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -22,14 +25,11 @@ export default function HomePage() {
             Every story here is a leak — a memory the city failed to contain.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-            <div className="group inline-block">
+            <HeroEnterVerasanth>
               <Button variant="accent" href="/verasanth/play">
                 Enter Verasanth
               </Button>
-              <p className="okb-meta invisible mt-1 italic group-hover:visible">
-                It&apos;s already seen you.
-              </p>
-            </div>
+            </HeroEnterVerasanth>
             <Button variant="outline" href="/tales">
               Read the Tales
             </Button>
@@ -45,7 +45,14 @@ export default function HomePage() {
               above it. The guilds, the sewers, the firelight — all of it is
               maintenance. All of it is containment.
             </p>
-            <p className="okb-body">The Tales are what leak out.</p>
+            <p className="okb-body">
+              <Link
+                href="/tales"
+                className="text-okb-accent hover:text-okb-accent-h"
+              >
+                The Tales are what leak out.
+              </Link>
+            </p>
             <p className="okb-body">
               Stories from inside the walls. Lore fragments. Rumor and record.
               The kind of writing that happens when a world starts remembering
@@ -89,50 +96,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-okb-bg-elevated py-16 md:py-24">
-        <Container size="wide" className="space-y-6">
-          <SectionHeading title="Explore the Table" />
-          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <li>
-              <Card
-                className="bg-okb-bg"
-                title="The Archives"
-                excerpt="Stories that slipped through the cracks. Fragments, rumors, and the kind of writing a city produces when it starts remembering itself."
-                href="/tales"
-                emphasizeTitle
-              />
-            </li>
-            <li>
-              <Card
-                className="bg-okb-bg"
-                title="Tales from the Tavern"
-                excerpt="Notes from the bard's desk — reflections, craft, and the occasional sharp edge. Not Verasanth, but shaped by the same firelight."
-                href="/tavern"
-                emphasizeTitle
-              />
-            </li>
-            <li>
-              <Card
-                className="bg-okb-bg"
-                title="The World of Verasanth"
-                excerpt="Maps, factions, and the living architecture beneath the streets. A world built to contain something older than itself."
-                href="/verasanth"
-                emphasizeTitle
-              />
-            </li>
-            <li>
-              <Card
-                className="bg-okb-bg"
-                title="Join the Tavern"
-                excerpt="A hearth out of the wind. Quiet voices, stray threads of lore, and the sense that something in the city is still listening."
-                href={discordUrl}
-                emphasizeTitle
-                external
-              />
-            </li>
-          </ul>
-        </Container>
-      </section>
+      <ExploreTable discordUrl={discordUrl} />
 
       <section className="border-t border-okb-border/60 bg-okb-bg py-8 md:py-10">
         <Container>

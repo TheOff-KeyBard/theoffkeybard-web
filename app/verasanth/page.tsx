@@ -100,6 +100,14 @@ export default function VerasanthLorePage() {
               The question is what it is trying to keep contained.
             </p>
           </div>
+          <p className="okb-meta mt-6">
+            <Link
+              href="/tales"
+              className="text-okb-accent hover:text-okb-accent-h"
+            >
+              Fragments of this surface in the archive.
+            </Link>
+          </p>
         </Container>
       </section>
 

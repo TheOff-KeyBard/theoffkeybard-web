@@ -79,10 +79,26 @@ export default async function TalePage({ params }: PageProps) {
 
           <Prose className="mt-8">{content}</Prose>
 
-          <div className="mt-12 border-t border-okb-border pt-8">
+          <div className="mt-12 space-y-6 border-t border-okb-border pt-8">
+            <p className="okb-body text-okb-text">Seen this in the city?</p>
+            <p className="okb-meta">
+              <Link
+                href="/verasanth"
+                className="text-okb-accent hover:text-okb-accent-h"
+              >
+                The World of Verasanth
+              </Link>
+              <span className="text-okb-faint"> · </span>
+              <Link
+                href="/tales"
+                className="text-okb-accent hover:text-okb-accent-h"
+              >
+                More from the Archive
+              </Link>
+            </p>
             <Link
               href="/tales"
-              className="okb-meta text-okb-accent hover:text-okb-accent-h"
+              className="okb-meta block text-okb-accent hover:text-okb-accent-h"
             >
               ← Back to the Archive
             </Link>
