@@ -22,9 +22,14 @@ export default function HomePage() {
             Every story here is a leak — a memory the city failed to contain.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-            <Button variant="accent" href="/verasanth/play">
-              Enter Verasanth
-            </Button>
+            <div className="group inline-block">
+              <Button variant="accent" href="/verasanth/play">
+                Enter Verasanth
+              </Button>
+              <p className="okb-meta invisible mt-1 italic group-hover:visible">
+                It&apos;s already seen you.
+              </p>
+            </div>
             <Button variant="outline" href="/tales">
               Read the Tales
             </Button>
