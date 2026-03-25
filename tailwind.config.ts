@@ -13,6 +13,7 @@ const config: Config = {
       colors: {
         okb: {
           bg: "#1a1714",
+          "bg-soft": "#1c1815",
           "bg-elevated": "#231f1a",
           accent: "#c0622a",
           "accent-h": "#a85523",

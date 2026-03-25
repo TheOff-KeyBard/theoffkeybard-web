@@ -1,40 +1,58 @@
-import type { Metadata } from "next";
-import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Verasanth",
-};
+import { useState } from "react";
 
-export default function VerasanthPlaceholderPage() {
+/** ~header + link row + main pb-12 + footer block (mt-16 + py-8 + content) */
+const IFRAME_HEIGHT =
+  "min-h-0 flex-1 h-[calc(100dvh-22rem)] sm:h-[calc(100dvh-19rem)]";
+
+export default function VerasanthPage() {
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
+  const raw = process.env.NEXT_PUBLIC_VERASANTH_GAME_URL?.replace(/\/$/, "");
+  const gameUrl = raw && raw.length > 0 ? raw : "";
+
+  if (!gameUrl) {
+    return (
+      <div className="w-full overflow-hidden bg-okb-bg px-3 py-3">
+        <p className="text-sm text-okb-faint">
+          Set{" "}
+          <code className="text-okb-text">NEXT_PUBLIC_VERASANTH_GAME_URL</code>{" "}
+          to your deployed game URL.
+        </p>
+      </div>
+    );
+  }
+
   return (
-    <section className="bg-okb-bg py-16 md:py-24">
-      <Container>
-        <article className="space-y-8">
-          <h1 className="okb-h1">Verasanth</h1>
-          <div className="space-y-4">
-            <p className="okb-body">
-              The city remembers you. It doesn&apos;t care that you&apos;ve
-              forgotten it.
-            </p>
-            <p className="okb-body">
-              Verasanth is a world built from history&apos;s recurring patterns —
-              the rise of factions, the weight of old decisions, the way power
-              moves when no one is looking. It is not a world of chosen heroes.
-              It is a world of consequences.
-            </p>
-            <p className="okb-body">
-              The lore is in development. The map is being drawn. Come back when
-              the fire&apos;s higher.
-            </p>
+    <div className="w-full overflow-hidden bg-okb-bg">
+      <div className="flex flex-col px-3 py-2">
+        <a
+          href={gameUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="self-end text-sm text-okb-faint hover:text-okb-text"
+        >
+          Open Verasanth in a new tab ↗
+        </a>
+      </div>
+      <div className={`relative flex flex-col ${IFRAME_HEIGHT}`}>
+        {!iframeLoaded && (
+          <div
+            className="absolute inset-0 z-10 flex items-center justify-center bg-okb-bg text-sm text-okb-faint"
+            aria-live="polite"
+          >
+            Loading…
           </div>
-          <div>
-            <Button variant="outline" href="/tales">
-              Read the Tales in the meantime
-            </Button>
-          </div>
-        </article>
-      </Container>
-    </section>
+        )}
+        <iframe
+          title="Verasanth"
+          src={gameUrl}
+          className="h-full w-full min-h-0 flex-1 border-0"
+          onLoad={() => setIframeLoaded(true)}
+          allow="fullscreen"
+        />
+      </div>
+    </div>
   );
 }

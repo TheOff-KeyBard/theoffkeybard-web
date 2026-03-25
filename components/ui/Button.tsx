@@ -5,6 +5,10 @@ type ButtonProps = {
   href?: string;
   children: React.ReactNode;
   className?: string;
+  /** Used when rendering a native button (no href). */
+  buttonType?: "button" | "submit";
+  disabled?: boolean;
+  onClick?: () => void;
 };
 
 const base =
@@ -22,6 +26,9 @@ export function Button({
   href,
   children,
   className,
+  buttonType = "button",
+  disabled,
+  onClick,
 }: ButtonProps) {
   const classes = [base, variants[variant], className ?? ""]
     .filter(Boolean)
@@ -36,7 +43,12 @@ export function Button({
   }
 
   return (
-    <button type="button" className={classes}>
+    <button
+      type={buttonType}
+      className={classes}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
