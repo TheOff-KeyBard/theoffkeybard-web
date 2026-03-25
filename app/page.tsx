@@ -14,6 +14,9 @@ export default function HomePage() {
           <p className="okb-hero-intro mx-auto sm:mx-0">
             Verasanth is not a place you visit. It is a place that keeps you.
           </p>
+          <p className="okb-body mx-auto sm:mx-0">
+            Every story here is a leak — a memory the city failed to contain.
+          </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <Button variant="accent" href="/verasanth">
               Enter Verasanth
@@ -39,6 +42,12 @@ export default function HomePage() {
               The kind of writing that happens when a world starts remembering
               itself.
             </p>
+            <p className="okb-body">
+              Because some worlds aren&apos;t built — they grow. Verasanth began
+              as a story, became a system, and now exists as something closer to a
+              living structure. This site is where its surface cracks. Where
+              fragments rise. Where you decide whether to look deeper.
+            </p>
           </div>
         </Container>
       </section>
@@ -48,7 +57,8 @@ export default function HomePage() {
           <SectionHeading title="From the Archives" />
           <div className="border border-dashed border-okb-border bg-okb-bg px-6 py-10 text-center">
             <p className="okb-body">
-              Featured content will appear here.
+              The Archive is never empty. You just haven&apos;t found what
+              it&apos;s willing to show you yet.
             </p>
           </div>
         </Container>
@@ -62,7 +72,7 @@ export default function HomePage() {
               <Card
                 className="bg-okb-bg"
                 title="The Tales"
-                excerpt="History, myth, and bardic mischief. The main archive — where the stories live."
+                excerpt="Stories that slipped through the cracks. Fragments, rumors, and the kind of writing a city produces when it starts remembering itself."
                 href="/tales"
                 tag="Archive"
               />
@@ -71,7 +81,7 @@ export default function HomePage() {
               <Card
                 className="bg-okb-bg"
                 title="Commentary"
-                excerpt="Sharp takes on culture, technology, and the modern world. Thoughtful, occasionally biting, never boring."
+                excerpt="Notes from the bard's desk — reflections, craft, and the occasional sharp edge. Not Verasanth… but shaped by the same firelight."
                 href="/tales"
                 tag="Commentary"
               />
@@ -80,7 +90,7 @@ export default function HomePage() {
               <Card
                 className="bg-okb-bg"
                 title="Verasanth"
-                excerpt="A world built from history's wreckage. Factions, lore, and a map that keeps changing."
+                excerpt="Maps, factions, and the living architecture beneath the streets. A world built to contain something older than itself."
                 href="/verasanth"
                 tag="Lore"
               />
