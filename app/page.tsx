@@ -25,7 +25,7 @@ export default function HomePage() {
             Every story here is a leak — a memory the city failed to contain.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-            <Button variant="accent" href="/verasanth">
+            <Button variant="accent" href="/verasanth/play">
               Enter Verasanth
             </Button>
             <Button variant="outline" href="/tales">
@@ -88,29 +88,28 @@ export default function HomePage() {
             <li>
               <Card
                 className="bg-okb-bg"
-                title="The Tales"
+                title="The Archives"
                 excerpt="Stories that slipped through the cracks. Fragments, rumors, and the kind of writing a city produces when it starts remembering itself."
                 href="/tales"
-                tag="Archive"
+                emphasizeTitle
               />
             </li>
-            {/* TODO: point Tavern Tales to a dedicated route when it exists; temporarily /about */}
             <li>
               <Card
                 className="bg-okb-bg"
-                title="Tavern Tales"
+                title="Tales from the Tavern"
                 excerpt="Notes from the bard's desk — reflections, craft, and the occasional sharp edge. Not Verasanth, but shaped by the same firelight."
-                href="/about"
-                tag="Commentary"
+                href="/tavern"
+                emphasizeTitle
               />
             </li>
             <li>
               <Card
                 className="bg-okb-bg"
-                title="Verasanth"
+                title="The World of Verasanth"
                 excerpt="Maps, factions, and the living architecture beneath the streets. A world built to contain something older than itself."
                 href="/verasanth"
-                tag="Lore"
+                emphasizeTitle
               />
             </li>
             <li>
@@ -119,7 +118,7 @@ export default function HomePage() {
                 title="Join the Tavern"
                 excerpt="A hearth out of the wind. Quiet voices, stray threads of lore, and the sense that something in the city is still listening."
                 href={discordUrl}
-                tag="Tavern"
+                emphasizeTitle
                 external
               />
             </li>

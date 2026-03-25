@@ -9,6 +9,8 @@ type CardProps = {
   className?: string;
   /** External URL: renders `<a>` with `target="_blank"` and `rel="noopener noreferrer"`. */
   external?: boolean;
+  /** Larger title when category tags are omitted (e.g. Explore the Table). */
+  emphasizeTitle?: boolean;
 };
 
 const cardClasses =
@@ -21,8 +23,13 @@ export function Card({
   tag,
   className,
   external,
+  emphasizeTitle,
 }: CardProps) {
   const classes = [cardClasses, className ?? ""].filter(Boolean).join(" ");
+
+  const titleClass = emphasizeTitle
+    ? "font-serif text-xl font-semibold leading-tight text-okb-text md:text-2xl"
+    : "okb-h3";
 
   const inner = (
     <>
@@ -31,8 +38,10 @@ export function Card({
           <LoreTag label={tag} />
         </div>
       ) : null}
-      <h3 className="okb-h3">{title}</h3>
-      {excerpt ? <p className="okb-body mt-2">{excerpt}</p> : null}
+      <h3 className={titleClass}>{title}</h3>
+      {excerpt ? (
+        <p className={tag ? "okb-body mt-2" : "okb-body mt-3"}>{excerpt}</p>
+      ) : null}
     </>
   );
 

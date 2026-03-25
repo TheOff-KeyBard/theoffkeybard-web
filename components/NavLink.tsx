@@ -12,6 +12,9 @@ function pathIsActive(pathname: string, href: string): boolean {
   if (href === "/tales") {
     return pathname === "/tales" || pathname.startsWith("/tales/");
   }
+  if (href === "/verasanth") {
+    return pathname === "/verasanth" || pathname.startsWith("/verasanth/");
+  }
   return pathname === href;
 }
 

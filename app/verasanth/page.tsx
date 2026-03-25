@@ -1,58 +1,58 @@
-"use client";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
 
-import { useState } from "react";
+export const metadata: Metadata = {
+  title: "The World of Verasanth",
+};
 
-/** ~header + link row + main pb-12 + footer block (mt-16 + py-8 + content) */
-const IFRAME_HEIGHT =
-  "min-h-0 flex-1 h-[calc(100dvh-22rem)] sm:h-[calc(100dvh-19rem)]";
-
-export default function VerasanthPage() {
-  const [iframeLoaded, setIframeLoaded] = useState(false);
-
-  const raw = process.env.NEXT_PUBLIC_VERASANTH_GAME_URL?.replace(/\/$/, "");
-  const gameUrl = raw && raw.length > 0 ? raw : "";
-
-  if (!gameUrl) {
-    return (
-      <div className="w-full overflow-hidden bg-okb-bg px-3 py-3">
-        <p className="text-sm text-okb-faint">
-          Set{" "}
-          <code className="text-okb-text">NEXT_PUBLIC_VERASANTH_GAME_URL</code>{" "}
-          to your deployed game URL.
-        </p>
-      </div>
-    );
-  }
-
+export default function VerasanthLorePage() {
   return (
-    <div className="w-full overflow-hidden bg-okb-bg">
-      <div className="flex flex-col px-3 py-2">
-        <a
-          href={gameUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="self-end text-sm text-okb-faint hover:text-okb-text"
-        >
-          Open Verasanth in a new tab ↗
-        </a>
-      </div>
-      <div className={`relative flex flex-col ${IFRAME_HEIGHT}`}>
-        {!iframeLoaded && (
-          <div
-            className="absolute inset-0 z-10 flex items-center justify-center bg-okb-bg text-sm text-okb-faint"
-            aria-live="polite"
-          >
-            Loading…
+    <section className="bg-okb-bg py-16 md:py-24">
+      <Container>
+        <article className="space-y-8">
+          <h1 className="okb-h1">The World of Verasanth</h1>
+          <div className="space-y-4">
+            <p className="okb-hero-intro">
+              Verasanth is not a place you visit. It is a place that keeps you.
+            </p>
+            <p className="okb-body">
+              A city built over something older than the structures above it. The
+              guilds, the sewers, the firelight — all of it is maintenance. All of
+              it is containment.
+            </p>
+            <p className="okb-body">
+              The deeper you go, the less the city feels like something built…
+              and the more it feels like something that grew.
+            </p>
           </div>
-        )}
-        <iframe
-          title="Verasanth"
-          src={gameUrl}
-          className="h-full w-full min-h-0 flex-1 border-0"
-          onLoad={() => setIframeLoaded(true)}
-          allow="fullscreen"
-        />
-      </div>
-    </div>
+          <hr className="border-okb-border" />
+          <div className="space-y-4">
+            <h2 className="okb-h2">What Lies Within</h2>
+            <ul className="list-disc space-y-2 pl-6 okb-body text-okb-text">
+              <li>Guilds that function like organs</li>
+              <li>Streets that remember who walks them</li>
+              <li>A descent that does not end where it should</li>
+              <li>Systems designed to hold something in place</li>
+            </ul>
+          </div>
+          <div>
+            <Button variant="accent" href="/verasanth/play">
+              Enter Verasanth
+            </Button>
+          </div>
+          <p className="text-sm text-okb-faint">The city does not forget.</p>
+          <div>
+            <Link
+              href="/"
+              className="text-sm text-okb-muted hover:text-okb-text"
+            >
+              ← Return to the main page
+            </Link>
+          </div>
+        </article>
+      </Container>
+    </section>
   );
 }
