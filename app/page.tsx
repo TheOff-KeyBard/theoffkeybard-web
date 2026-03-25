@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { RotatingLine } from "@/components/ui/RotatingLine";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { getDiscordInviteUrl } from "@/lib/discord";
 import { getAllTales } from "@/lib/tales";
@@ -58,6 +59,12 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <div className="bg-okb-bg px-4 py-6 text-center">
+        <p className="font-serif text-sm italic text-okb-faint">
+          Most people stop here. The ones who don&apos;t tend to go deeper.
+        </p>
+      </div>
 
       <section className="bg-okb-bg py-16 md:py-24">
         <Container className="space-y-6">
@@ -128,9 +135,7 @@ export default function HomePage() {
 
       <section className="border-t border-okb-border/60 bg-okb-bg py-8 md:py-10">
         <Container>
-          <p className="text-center font-serif text-sm italic text-okb-faint sm:text-left">
-            The archive is deeper than it looks.
-          </p>
+          <RotatingLine />
         </Container>
       </section>
     </div>
