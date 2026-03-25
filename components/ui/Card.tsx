@@ -7,19 +7,25 @@ type CardProps = {
   href: string;
   tag?: string;
   className?: string;
+  /** External URL: renders `<a>` with `target="_blank"` and `rel="noopener noreferrer"`. */
+  external?: boolean;
 };
 
-export function Card({ title, excerpt, href, tag, className }: CardProps) {
-  return (
-    <Link
-      href={href}
-      className={[
-        "block border border-okb-border bg-okb-bg-elevated p-5 hover:border-okb-accent",
-        className ?? "",
-      ]
-        .filter(Boolean)
-        .join(" ")}
-    >
+const cardClasses =
+  "block border border-okb-border bg-okb-bg-elevated p-5 hover:border-okb-accent";
+
+export function Card({
+  title,
+  excerpt,
+  href,
+  tag,
+  className,
+  external,
+}: CardProps) {
+  const classes = [cardClasses, className ?? ""].filter(Boolean).join(" ");
+
+  const inner = (
+    <>
       {tag ? (
         <div className="mb-2">
           <LoreTag label={tag} />
@@ -27,6 +33,25 @@ export function Card({ title, excerpt, href, tag, className }: CardProps) {
       ) : null}
       <h3 className="okb-h3">{title}</h3>
       {excerpt ? <p className="okb-body mt-2">{excerpt}</p> : null}
+    </>
+  );
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        className={classes}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={classes}>
+      {inner}
     </Link>
   );
 }

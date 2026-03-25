@@ -2,13 +2,14 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { DISCORD_INVITE_URL } from "@/lib/discord";
+import { getDiscordInviteUrl } from "@/lib/discord";
 import { getAllTales } from "@/lib/tales";
 
 export default function HomePage() {
   const allTales = getAllTales();
   const featuredTale =
     allTales.find((t) => t.featured) ?? allTales[0] ?? null;
+  const discordUrl = getDiscordInviteUrl();
 
   return (
     <div>
@@ -83,7 +84,7 @@ export default function HomePage() {
       <section className="bg-okb-bg-elevated py-16 md:py-24">
         <Container size="wide" className="space-y-6">
           <SectionHeading title="Explore the Table" />
-          <ul className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <li>
               <Card
                 className="bg-okb-bg"
@@ -93,12 +94,13 @@ export default function HomePage() {
                 tag="Archive"
               />
             </li>
+            {/* TODO: point Tavern Tales to a dedicated route when it exists; temporarily /about */}
             <li>
               <Card
                 className="bg-okb-bg"
-                title="Commentary"
-                excerpt="Notes from the bard's desk — reflections, craft, and the occasional sharp edge. Not Verasanth… but shaped by the same firelight."
-                href="/tales"
+                title="Tavern Tales"
+                excerpt="Notes from the bard's desk — reflections, craft, and the occasional sharp edge. Not Verasanth, but shaped by the same firelight."
+                href="/about"
                 tag="Commentary"
               />
             </li>
@@ -111,41 +113,25 @@ export default function HomePage() {
                 tag="Lore"
               />
             </li>
+            <li>
+              <Card
+                className="bg-okb-bg"
+                title="Join the Tavern"
+                excerpt="A hearth out of the wind. Quiet voices, stray threads of lore, and the sense that something in the city is still listening."
+                href={discordUrl}
+                tag="Tavern"
+                external
+              />
+            </li>
           </ul>
         </Container>
       </section>
 
-      <section className="bg-okb-bg py-16 md:py-24">
-        <Container className="space-y-6 text-center sm:text-left">
-          <h2 className="okb-h2">Join the Tavern</h2>
-          <p className="okb-body mx-auto max-w-2xl sm:mx-0">
-            A hearth out of the wind. Quiet voices, stray threads of lore, and
-            the sense that something in the city is still listening.
+      <section className="border-t border-okb-border/60 bg-okb-bg py-8 md:py-10">
+        <Container>
+          <p className="text-center font-serif text-sm italic text-okb-faint sm:text-left">
+            The archive is deeper than it looks.
           </p>
-          <div>
-            <Button
-              variant="outline"
-              href={DISCORD_INVITE_URL}
-              external
-            >
-              Join on Discord
-            </Button>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-okb-bg py-16 md:py-24">
-        <Container className="space-y-6 text-center sm:text-left">
-          <h2 className="okb-h2">There&apos;s more where that came from.</h2>
-          <p className="okb-body mx-auto max-w-2xl sm:mx-0">
-            The archive runs deep. New tales are added when the bard finds
-            something worth saying.
-          </p>
-          <div>
-            <Button variant="accent" href="/tales">
-              Read the Tales
-            </Button>
-          </div>
         </Container>
       </section>
     </div>
