@@ -29,9 +29,10 @@ export function SiteHeader() {
             href={DISCORD_INVITE_URL}
             target="_blank"
             rel="noopener noreferrer"
+            title="Join the Discord server"
             className="text-sm text-okb-muted hover:text-okb-text"
           >
-            Discord
+            Tavern
           </a>
         </nav>
       </Container>
