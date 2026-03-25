@@ -9,6 +9,7 @@ export type TaleFrontmatter = {
   date: string;
   excerpt: string;
   tag?: string;
+  featured?: boolean;
 };
 
 export function getTaleSlugs(): string[] {
@@ -32,6 +33,7 @@ export function getAllTales(): (TaleFrontmatter & { slug: string })[] {
         date: data.date as string,
         excerpt: data.excerpt as string,
         ...(typeof data.tag === "string" ? { tag: data.tag } : {}),
+        ...(data.featured === true ? { featured: true } : {}),
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
