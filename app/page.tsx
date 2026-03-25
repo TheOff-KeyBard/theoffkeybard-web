@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { HeroText } from "@/components/ui/HeroText";
 import { RotatingLine } from "@/components/ui/RotatingLine";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { getDiscordInviteUrl } from "@/lib/discord";
@@ -16,12 +17,7 @@ export default function HomePage() {
     <div>
       <section className="bg-okb-bg py-16 md:py-24">
         <Container size="hero" className="space-y-6 text-center sm:text-left">
-          <h1 className="okb-h1">
-            Enter the city that remembers you
-          </h1>
-          <p className="okb-hero-intro mx-auto sm:mx-0">
-            Verasanth is not a place you visit. It is a place that keeps you.
-          </p>
+          <HeroText />
           <p className="okb-body mx-auto sm:mx-0">
             Every story here is a leak — a memory the city failed to contain.
           </p>
