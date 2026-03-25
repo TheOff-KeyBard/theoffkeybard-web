@@ -15,25 +15,22 @@ export default function AboutPage() {
           <h1 className="okb-h1">The Off-Key Bard</h1>
           <div className="space-y-4">
             <p className="okb-hero-intro">
-              The Off-Key Bard is a writing and storytelling project: essays,
-              fiction, and the overlap between them. The voice is direct; the aim
-              is clarity without flattening what is strange or difficult.
+              The Off-Key Bard is a place for stories that don't sit quietly.
             </p>
             <p className="okb-body">
-              Material here draws on history and myth, on close reading and
-              invention. Nothing is offered as the last word—only as something
-              worth sitting with.
+              Some are essays — direct, curious, occasionally sideways. Some are tales — fragments of worlds that feel remembered rather than invented. Most live somewhere in between.
             </p>
             <p className="okb-body">
-              This site is a home for bardic history: real events told with
-              narrative weight, emotional texture, and a refusal to sand down
-              the interesting parts. It&apos;s also home to Verasanth — a game
-              world built from the same instincts, where history&apos;s patterns
-              play out in a world that never quite existed.
+              The aim is simple: clarity without flattening what is strange or difficult. No sanding down the edges. No pretending the world is cleaner than it is.
             </p>
             <p className="okb-body">
-              And sometimes, it&apos;s just commentary. The world is strange. It
-              deserves more than a headline.
+              Verasanth grew out of that same instinct. What began as worldbuilding became something more persistent: a city with memory, structure, and intent. A containment system disguised as a place. A world that doesn't just exist — it keeps.
+            </p>
+            <p className="okb-body">
+              This site is the campfire outside its gates. Stories surface here first. Fragments. Rumors. Things that slipped past whatever the city was trying to hold.
+            </p>
+            <p className="okb-body">
+              And sometimes, it's just commentary. The world is strange. It deserves more than a headline.
             </p>
           </div>
           <BardsNote>
