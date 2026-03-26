@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Tales from the Tavern",
+  title: "The Bards Journal",
 };
 
 export default function TavernPage() {
@@ -11,7 +11,7 @@ export default function TavernPage() {
     <section className="bg-okb-bg py-16 md:py-24">
       <Container>
         <article className="space-y-8">
-          <h1 className="okb-h1">Tales from the Tavern</h1>
+          <h1 className="okb-h1">The Bards Journal</h1>
           <div className="space-y-4">
             <p className="okb-body">
               Not every story belongs to the city. Some are told beside it — in
