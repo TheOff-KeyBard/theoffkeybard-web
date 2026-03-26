@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Behind the Quill",
 };
 
 export default function AboutPage() {

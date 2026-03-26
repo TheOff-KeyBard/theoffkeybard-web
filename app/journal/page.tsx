@@ -26,7 +26,7 @@ export default function TavernPage() {
           </div>
           <div className="border border-dashed border-okb-border bg-okb-bg-elevated px-6 py-10 text-center">
             <p className="okb-body text-okb-muted">
-              Tavern entries are coming soon.
+              Journal entries are coming soon.
             </p>
           </div>
           <p className="text-sm text-okb-faint">
