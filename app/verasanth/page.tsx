@@ -199,9 +199,15 @@ export default function VerasanthLorePage() {
         <Container size="wide" className="mt-8">
           <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <li>
-              <GuildPanel title="The Ashen Archive">
-                Keepers of memory, containment, and dangerous knowledge.
-              </GuildPanel>
+              <Link
+                href="/verasanth/ashen-archive"
+                className="block border border-okb-border bg-okb-bg-elevated p-5 transition-colors hover:border-okb-accent"
+              >
+                <h3 className="okb-h3">The Ashen Archive</h3>
+                <p className="okb-body mt-2">
+                  Keepers of memory, containment, and dangerous knowledge.
+                </p>
+              </Link>
             </li>
             <li>
               <GuildPanel title="The Broken Banner">
