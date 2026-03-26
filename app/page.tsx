@@ -70,7 +70,7 @@ export default function HomePage() {
 
       <div className="bg-okb-bg px-4 py-6 text-center">
         <p className="font-serif text-sm italic text-okb-faint">
-          Most people stop here. The ones who don&apos;t tend to go deeper.
+          Most people stop here. The city remembers the ones who don&apos;t.
         </p>
       </div>
 
