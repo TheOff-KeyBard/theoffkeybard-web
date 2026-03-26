@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { NavLink } from "@/components/NavLink";
 import { Container } from "@/components/ui/Container";
+import { ExternalLinkGlyph } from "@/components/ui/ExternalLinkGlyph";
 import { DISCORD_INVITE_URL } from "@/lib/discord";
 
 const nav = [
@@ -11,7 +12,7 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-okb-border bg-okb-bg">
+    <header className="sticky top-0 z-40 border-b border-okb-border bg-okb-bg">
       <Container className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/"
@@ -29,10 +30,11 @@ export function SiteHeader() {
             href={DISCORD_INVITE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            title="Join the Discord server"
-            className="text-sm text-okb-muted hover:text-okb-text"
+            title="Opens Discord in a new tab"
+            className="inline-flex items-center gap-1 text-sm text-okb-muted hover:text-okb-text"
           >
-            Tavern
+            <span>Tavern</span>
+            <ExternalLinkGlyph className="shrink-0 opacity-70" />
           </a>
         </nav>
       </Container>
