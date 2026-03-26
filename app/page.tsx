@@ -30,8 +30,8 @@ export default function HomePage() {
                 Enter Verasanth
               </Button>
             </HeroEnterVerasanth>
-            <Button variant="outline" href="/tales">
-              Read the Tales
+            <Button variant="outline" href="/ledger">
+              Open the Ledger
             </Button>
           </div>
         </Container>
@@ -47,10 +47,10 @@ export default function HomePage() {
             </p>
             <p className="okb-body">
               <Link
-                href="/tales"
+                href="/ledger"
                 className="text-okb-accent hover:text-okb-accent-h"
               >
-                The Tales are what leak out.
+                The Ashen Ledger is what leaks out.
               </Link>
             </p>
             <p className="okb-body">
@@ -76,19 +76,19 @@ export default function HomePage() {
 
       <section className="bg-okb-bg py-16 md:py-24">
         <Container className="space-y-6">
-          <SectionHeading title="From the Archives" />
+          <SectionHeading title="From the Ledger" />
           {featuredTale ? (
             <Card
               className="bg-okb-bg"
               title={featuredTale.title}
               excerpt={featuredTale.excerpt}
-              href={`/tales/${featuredTale.slug}`}
+              href={`/ledger/${featuredTale.slug}`}
               tag={featuredTale.tag}
             />
           ) : (
             <div className="border border-dashed border-okb-border bg-okb-bg px-6 py-10 text-center">
               <p className="okb-body">
-                The Archive is never empty. You just haven&apos;t found what
+                The Ledger is never empty. You just haven&apos;t found what
                 it&apos;s willing to show you yet.
               </p>
             </div>

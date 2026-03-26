@@ -38,8 +38,8 @@ export default function AboutPage() {
             take their time.
           </BardsNote>
           <div>
-            <Button variant="accent" href="/tales">
-              Read the Tales
+            <Button variant="accent" href="/ledger">
+              Open the Ledger
             </Button>
           </div>
         </article>

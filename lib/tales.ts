@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+/** MDX lives under content/tales/; URL is /ledger (see next.config redirects). */
 const CONTENT_DIR = path.join(process.cwd(), "content", "tales");
 
 export type TaleFrontmatter = {

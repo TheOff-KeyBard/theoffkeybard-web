@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { DISCORD_INVITE_URL } from "@/lib/discord";
 
 const nav = [
-  { href: "/tales", label: "Tales" },
+  { href: "/ledger", label: "The Ashen Ledger" },
   { href: "/about", label: "About" },
   { href: "/verasanth", label: "Verasanth" },
 ] as const;

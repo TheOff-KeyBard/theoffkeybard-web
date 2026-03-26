@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 
@@ -6,7 +6,7 @@ const RETURN_VARIANTS = [
   { headline: "You again.", sub: "The city remembers the shape of your boots." },
   { headline: "Back so soon.", sub: "The fog thins for people who keep walking." },
   { headline: "The hearth is still warm.", sub: "Some stories only open after the second knock." },
-  { headline: "Still listening.", sub: "Good. The archive likes a patient ear." },
+  { headline: "Still listening.", sub: "Good. The ledger likes a patient ear." },
   { headline: "The mountain has not moved.", sub: "Neither have the old questions beneath it." },
   { headline: "Welcome back, wanderer.", sub: "The streets keep their secrets… until they do not." },
 ] as const;

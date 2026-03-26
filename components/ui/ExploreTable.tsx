@@ -66,7 +66,7 @@ export function ExploreTable({ discordUrl }: ExploreTableProps) {
   }, []);
 
   const cards = [
-    <Card key="archives" className="bg-okb-bg" title="The Archives" excerpt="Stories that slipped through the cracks. Fragments, rumors, and the kind of writing a city produces when it starts remembering itself." href="/tales" emphasizeTitle />,
+    <Card key="archives" className="bg-okb-bg" title="The Ashen Ledger" excerpt="Entries that slipped through the cracks. Fragments, rumors, and the kind of writing a city produces when it starts remembering itself." href="/ledger" emphasizeTitle />,
     <Card key="tavern" className="bg-okb-bg" title="Tales from the Tavern" excerpt="Notes from the bard's desk — reflections, craft, and the occasional sharp edge. Not Verasanth, but shaped by the same firelight." href="/tavern" emphasizeTitle />,
     <Card key="verasanth" className="bg-okb-bg" title="The World of Verasanth" excerpt="Maps, factions, and the living architecture beneath the streets. A world built to contain something older than itself." href="/verasanth" emphasizeTitle />,
     <Card key="discord" className="bg-okb-bg" title="Join the Tavern" excerpt="A hearth out of the wind. Quiet voices, stray threads of lore, and the sense that something in the city is still listening." href={discordUrl} emphasizeTitle external />,

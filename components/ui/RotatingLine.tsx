@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const lines = [
-  "The archive is deeper than it looks.",
+  "The ledger is deeper than it looks.",
   "The city remembers everything.",
   "The walls are listening.",
   "You've been here before.",

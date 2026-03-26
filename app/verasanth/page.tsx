@@ -36,8 +36,8 @@ export default function VerasanthLorePage() {
             <Button variant="accent" href="/verasanth/play">
               Enter Verasanth
             </Button>
-            <Link href="/tales" className="okb-meta hover:text-okb-text">
-              Read the Archives
+            <Link href="/ledger" className="okb-meta hover:text-okb-text">
+              Open the Ledger
             </Link>
           </div>
         </Container>
@@ -102,10 +102,10 @@ export default function VerasanthLorePage() {
           </div>
           <p className="okb-meta mt-6">
             <Link
-              href="/tales"
+              href="/ledger"
               className="text-okb-accent hover:text-okb-accent-h"
             >
-              Fragments of this surface in the archive.
+              Fragments of this surface in the ledger.
             </Link>
           </p>
         </Container>

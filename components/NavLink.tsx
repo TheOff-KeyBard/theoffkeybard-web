@@ -9,8 +9,8 @@ type NavLinkProps = {
 };
 
 function pathIsActive(pathname: string, href: string): boolean {
-  if (href === "/tales") {
-    return pathname === "/tales" || pathname.startsWith("/tales/");
+  if (href === "/ledger") {
+    return pathname === "/ledger" || pathname.startsWith("/ledger/");
   }
   if (href === "/verasanth") {
     return pathname === "/verasanth" || pathname.startsWith("/verasanth/");

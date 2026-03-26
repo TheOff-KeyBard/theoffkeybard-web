@@ -40,7 +40,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default async function TalePage({ params }: PageProps) {
+export default async function LedgerEntryPage({ params }: PageProps) {
   const { slug } = params;
   const source = getTaleSource(slug);
 
@@ -80,27 +80,28 @@ export default async function TalePage({ params }: PageProps) {
           <Prose className="mt-8">{content}</Prose>
 
           <div className="mt-12 space-y-6 border-t border-okb-border pt-8">
-            <p className="okb-body text-okb-text">Seen this in the city?</p>
-            <p className="okb-meta">
+            <p className="okb-body text-okb-text">
+              Seen this in the city?{" "}
               <Link
                 href="/verasanth"
                 className="text-okb-accent hover:text-okb-accent-h"
               >
-                The World of Verasanth
-              </Link>
-              <span className="text-okb-faint"> · </span>
+                Enter Verasanth
+              </Link>{" "}
+              or{" "}
               <Link
-                href="/tales"
+                href="/ledger"
                 className="text-okb-accent hover:text-okb-accent-h"
               >
-                More from the Archive
+                return to the Ledger
               </Link>
+              .
             </p>
             <Link
-              href="/tales"
+              href="/ledger"
               className="okb-meta block text-okb-accent hover:text-okb-accent-h"
             >
-              ← Back to the Archive
+              ← Back to the Ledger
             </Link>
           </div>
         </article>
