@@ -1,7 +1,5 @@
-import type { Metadata } from "next";
 import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 import remarkBreaks from "remark-breaks";
 
@@ -11,45 +9,26 @@ import { Container } from "@/components/ui/Container";
 import { Prose } from "@/components/ui/Prose";
 import { TavernDivider } from "@/components/ui/TavernDivider";
 import {
-  getArchiveSlugs,
-  getArchiveSource,
-  type AshenArchiveFrontmatter,
-} from "@/lib/ashenArchive";
+  ashenDateTimeToken,
+  formatVerasanthDate,
+  getGuildEntrySource,
+  GUILD_LORE_META,
+  type GuildEntryFrontmatter,
+  type GuildKey,
+} from "@/lib/guildContent";
 
-type PageProps = {
-  params: { slug: string };
-};
+export async function GuildLoreEntryArticle({
+  guildKey,
+  slug,
+}: {
+  guildKey: GuildKey;
+  slug: string;
+}) {
+  const source = getGuildEntrySource(guildKey, slug);
+  if (!source) return null;
 
-export function generateStaticParams() {
-  return getArchiveSlugs().map((slug) => ({ slug }));
-}
-
-export function generateMetadata({ params }: PageProps): Metadata {
-  const { slug } = params;
-  const source = getArchiveSource(slug);
-
-  if (!source) {
-    return { title: "Not found" };
-  }
-
-  const { data } = matter(source);
-  const fm = data as AshenArchiveFrontmatter;
-
-  return {
-    title: `${fm.title} — Ashen Archive`,
-    description: fm.excerpt,
-  };
-}
-
-export default async function AshenArchiveEntryPage({ params }: PageProps) {
-  const { slug } = params;
-  const source = getArchiveSource(slug);
-
-  if (!source) {
-    notFound();
-  }
-
-  const { content, frontmatter } = await compileMDX<AshenArchiveFrontmatter>({
+  const meta = GUILD_LORE_META[guildKey];
+  const { content, frontmatter } = await compileMDX<GuildEntryFrontmatter>({
     source,
     options: {
       parseFrontmatter: true,
@@ -60,16 +39,22 @@ export default async function AshenArchiveEntryPage({ params }: PageProps) {
     components: taleMdxComponents,
   });
 
+  const ashenLabel = formatVerasanthDate({
+    cycle: frontmatter.cycle,
+    turn: frontmatter.turn,
+    mark: frontmatter.mark,
+  });
+
   return (
     <section className="bg-okb-bg py-16 md:py-24">
       <Container>
         <article>
           <header className="mb-8 space-y-3 pb-8">
             <time
-              dateTime={frontmatter.date}
+              dateTime={ashenDateTimeToken(frontmatter)}
               className="okb-meta block uppercase tracking-wide"
             >
-              {frontmatter.date}
+              {ashenLabel}
             </time>
 
             {frontmatter.tag ? (
@@ -91,18 +76,33 @@ export default async function AshenArchiveEntryPage({ params }: PageProps) {
                 href="/verasanth"
                 className="text-okb-accent hover:text-okb-accent-h"
               >
-                The World of Verasanth
+                ← Back to Verasanth
               </Link>
             </p>
             <Link
-              href="/verasanth/ashen-archive"
+              href={`/verasanth/${guildKey}`}
               className="okb-meta block text-okb-accent hover:text-okb-accent-h"
             >
-              ← Back to the Ashen Archive
+              ← Back to {meta.title}
             </Link>
           </div>
         </article>
       </Container>
     </section>
   );
+}
+
+export function guildEntryMetadata(
+  guildKey: GuildKey,
+  slug: string,
+): { title: string; description: string } | null {
+  const source = getGuildEntrySource(guildKey, slug);
+  if (!source) return null;
+  const { data } = matter(source);
+  const fm = data as GuildEntryFrontmatter;
+  const guildTitle = GUILD_LORE_META[guildKey].title;
+  return {
+    title: `${fm.title} — ${guildTitle}`,
+    description: fm.excerpt,
+  };
 }

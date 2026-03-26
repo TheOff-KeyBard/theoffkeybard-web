@@ -1,29 +1,23 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
-import { getAllArchiveEntries } from "@/lib/ashenArchive";
+import {
+  getAllGuildEntries,
+  GUILD_LORE_META,
+  type GuildKey,
+} from "@/lib/guildContent";
 
-export const metadata: Metadata = {
-  title: "The Ashen Archive",
-  description:
-    "Guild lore from the Ashen Archive — memory, containment, and dangerous knowledge.",
-};
-
-export default function AshenArchivePage() {
-  const entries = getAllArchiveEntries();
+export function GuildLoreListPage({ guildKey }: { guildKey: GuildKey }) {
+  const meta = GUILD_LORE_META[guildKey];
+  const entries = getAllGuildEntries(guildKey);
 
   return (
     <section className="bg-okb-bg py-16 md:py-24">
       <Container>
         <div className="space-y-10">
           <header className="space-y-3">
-            <h1 className="okb-h1">The Ashen Archive</h1>
-            <p className="okb-body max-w-2xl">
-              The Ashen Archive keeps what the city cannot afford to lose — and
-              what it cannot afford to remember openly. These fragments are
-              offered as the guild permits: cold, precise, incomplete.
-            </p>
+            <h1 className="okb-h1">{meta.title}</h1>
+            <p className="okb-body max-w-2xl">{meta.intro}</p>
           </header>
 
           {entries.length === 0 ? (
@@ -32,19 +26,19 @@ export default function AshenArchivePage() {
             </div>
           ) : (
             <ul className="grid gap-6 sm:grid-cols-1">
-              {entries.map(({ slug, title, date, excerpt, tag }) => (
+              {entries.map(({ slug, title, excerpt, tag, ashenLabel, ashenToken }) => (
                 <li key={slug} className="space-y-2">
                   <time
-                    dateTime={date}
+                    dateTime={ashenToken}
                     className="okb-meta block uppercase tracking-wide"
                   >
-                    {date}
+                    {ashenLabel}
                   </time>
 
                   <Card
                     title={title}
                     excerpt={excerpt}
-                    href={`/verasanth/ashen-archive/${slug}`}
+                    href={`/verasanth/${guildKey}/${slug}`}
                     tag={tag}
                   />
                 </li>

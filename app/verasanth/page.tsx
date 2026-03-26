@@ -8,14 +8,8 @@ export const metadata: Metadata = {
   title: "The World of Verasanth",
 };
 
-function GuildPanel({ title, children }: { title: string; children: string }) {
-  return (
-    <div className="border border-okb-border bg-okb-bg-elevated p-5">
-      <h3 className="okb-h3">{title}</h3>
-      <p className="okb-body mt-2">{children}</p>
-    </div>
-  );
-}
+const GUILD_LORE_CARD_CLASS =
+  "block border border-okb-border bg-okb-bg-elevated p-5 transition-colors hover:border-okb-accent";
 
 const VERASANTH_TIMELINE_ENTRIES: { ashenDate: string; description: string }[] = [
   {
@@ -199,10 +193,7 @@ export default function VerasanthLorePage() {
         <Container size="wide" className="mt-8">
           <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <li>
-              <Link
-                href="/verasanth/ashen-archive"
-                className="block border border-okb-border bg-okb-bg-elevated p-5 transition-colors hover:border-okb-accent"
-              >
+              <Link href="/verasanth/ashen-archive" className={GUILD_LORE_CARD_CLASS}>
                 <h3 className="okb-h3">The Ashen Archive</h3>
                 <p className="okb-body mt-2">
                   Keepers of memory, containment, and dangerous knowledge.
@@ -210,31 +201,49 @@ export default function VerasanthLorePage() {
               </Link>
             </li>
             <li>
-              <GuildPanel title="The Broken Banner">
-                Endurance, pressure, and survival given institutional form.
-              </GuildPanel>
+              <Link href="/verasanth/broken-banner" className={GUILD_LORE_CARD_CLASS}>
+                <h3 className="okb-h3">The Broken Banner</h3>
+                <p className="okb-body mt-2">
+                  Endurance, pressure, and survival given institutional form.
+                </p>
+              </Link>
             </li>
             <li>
-              <GuildPanel title="The Quiet Sanctum">
-                Healers, shepherds of hope, and a quiet defiance against despair.
-              </GuildPanel>
+              <Link href="/verasanth/quiet-sanctum" className={GUILD_LORE_CARD_CLASS}>
+                <h3 className="okb-h3">The Quiet Sanctum</h3>
+                <p className="okb-body mt-2">
+                  Healers, shepherds of hope, and a quiet defiance against despair.
+                </p>
+              </Link>
             </li>
             <li>
-              <GuildPanel title="Stone Watch">
-                Wardens of structure, foundations, and failing walls.
-              </GuildPanel>
+              <Link href="/verasanth/stone-watch" className={GUILD_LORE_CARD_CLASS}>
+                <h3 className="okb-h3">Stone Watch</h3>
+                <p className="okb-body mt-2">
+                  Wardens of structure, foundations, and failing walls.
+                </p>
+              </Link>
             </li>
             <li>
-              <GuildPanel title="The Veil Market">
-                Information, evasion, and the shadow-economy beneath the official
-                city.
-              </GuildPanel>
+              <Link href="/verasanth/veil-market" className={GUILD_LORE_CARD_CLASS}>
+                <h3 className="okb-h3">The Veil Market</h3>
+                <p className="okb-body mt-2">
+                  Information, evasion, and the shadow-economy beneath the official
+                  city.
+                </p>
+              </Link>
             </li>
             <li>
-              <GuildPanel title="The Umbral Covenant">
-                Those who work closest to corruption, shadow, and the truths most
-                people refuse to name.
-              </GuildPanel>
+              <Link
+                href="/verasanth/umbral-covenant"
+                className={GUILD_LORE_CARD_CLASS}
+              >
+                <h3 className="okb-h3">The Umbral Covenant</h3>
+                <p className="okb-body mt-2">
+                  Those who work closest to corruption, shadow, and the truths most
+                  people refuse to name.
+                </p>
+              </Link>
             </li>
           </ul>
         </Container>
