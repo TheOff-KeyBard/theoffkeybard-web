@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { formatVerasanthDate, type TurnIndex } from "@/lib/calendar";
 import { getAllTales } from "@/lib/tales";
 
 export const metadata: Metadata = {
@@ -26,10 +27,23 @@ export default function LedgerIndexPage() {
             <p className="okb-body">Nothing in the ledger yet.</p>
           ) : (
             <ul className="grid gap-6 sm:grid-cols-1">
-              {entries.map(({ slug, title, date, excerpt, tag }) => (
+              {entries.map(({ slug, title, date, cycle, turn, mark, excerpt, tag }) => (
                 <li key={slug} className="space-y-2">
-                  <time dateTime={date} className="okb-meta block uppercase tracking-wide">
-                    {date}
+                  <time
+                    dateTime={
+                      cycle != null && turn != null && mark != null
+                        ? `${cycle}-${turn}-${mark}`
+                        : (date ?? "")
+                    }
+                    className="okb-meta block uppercase tracking-wide"
+                  >
+                    {cycle != null && turn != null && mark != null
+                      ? formatVerasanthDate({
+                          cycle,
+                          turn: turn as TurnIndex,
+                          mark,
+                        })
+                      : date}
                   </time>
                   <Card
                     title={title}

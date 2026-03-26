@@ -101,7 +101,7 @@ export default async function LedgerEntryPage({ params }: PageProps) {
               href="/journal"
               className="okb-meta block text-okb-accent hover:text-okb-accent-h"
             >
-              ← Back to the Ledger
+              ← Back to the Journal
             </Link>
           </div>
         </article>

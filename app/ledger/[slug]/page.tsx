@@ -9,6 +9,7 @@ import { taleMdxComponents } from "@/mdx-components";
 import { Container } from "@/components/ui/Container";
 import { Prose } from "@/components/ui/Prose";
 import { TavernDivider } from "@/components/ui/TavernDivider";
+import { formatVerasanthDate, type TurnIndex } from "@/lib/calendar";
 import {
   getTaleSlugs,
   getTaleSource,
@@ -65,10 +66,24 @@ export default async function LedgerEntryPage({ params }: PageProps) {
         <article>
           <header className="mb-8 space-y-3 pb-8">
             <time
-              dateTime={frontmatter.date}
+              dateTime={
+                frontmatter.cycle != null &&
+                frontmatter.turn != null &&
+                frontmatter.mark != null
+                  ? `${frontmatter.cycle}-${frontmatter.turn}-${frontmatter.mark}`
+                  : (frontmatter.date ?? "")
+              }
               className="okb-meta block uppercase tracking-wide"
             >
-              {frontmatter.date}
+              {frontmatter.cycle != null &&
+              frontmatter.turn != null &&
+              frontmatter.mark != null
+                ? formatVerasanthDate({
+                    cycle: frontmatter.cycle,
+                    turn: frontmatter.turn as TurnIndex,
+                    mark: frontmatter.mark,
+                  })
+                : frontmatter.date}
             </time>
 
             <h1 className="okb-h1">{frontmatter.title}</h1>
