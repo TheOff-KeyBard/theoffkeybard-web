@@ -5,7 +5,7 @@ import { DISCORD_INVITE_URL } from "@/lib/discord";
 
 const nav = [
   { href: "/ledger", label: "The Ashen Ledger" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "Behind the Quill" },
   { href: "/verasanth", label: "Verasanth" },
 ] as const;
 
