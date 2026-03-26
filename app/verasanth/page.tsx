@@ -17,6 +17,54 @@ function GuildPanel({ title, children }: { title: string; children: string }) {
   );
 }
 
+const VERASANTH_TIMELINE_ENTRIES: { ashenDate: string; description: string }[] = [
+  {
+    ashenDate: "Mark 3, Turn of Embers, Cycle 6312",
+    description:
+      "The first light recorded. The city opened its eyes. Something noticed.",
+  },
+  {
+    ashenDate: "Mark 4, Turn of Veils, Cycle 6312",
+    description:
+      "Echoes noted in the stone walls of the lower passages. The walls were already listening.",
+  },
+  {
+    ashenDate: "Mark 6, Turn of Shadows, Cycle 6312",
+    description:
+      "A descender passed the last door and did not come back the same.",
+  },
+  {
+    ashenDate: "Mark 7, Turn of Embers, Cycle 6312",
+    description:
+      "A stranger arrived at the tavern. The ledger already had their name.",
+  },
+  {
+    ashenDate: "Mark 8, Turn of Stone, Cycle 6312",
+    description:
+      "The Archive's containment flame shifted. The ash did not settle.",
+  },
+  {
+    ashenDate: "Mark 11, Turn of Echoes, Cycle 6312",
+    description:
+      "The Sanctum flame responded to something it should not have been able to hear.",
+  },
+  {
+    ashenDate: "Mark 17, Turn of Embers, Cycle 6312",
+    description:
+      "The quiet step noticed in the southern alleys. Something learned to move without disturbing the dust.",
+  },
+  {
+    ashenDate: "Mark 19, Turn of Stone, Cycle 6312",
+    description:
+      "The Veil Market made its first recorded move. No one saw it happen.",
+  },
+  {
+    ashenDate: "Mark 22, Turn of Veils, Cycle 6312",
+    description:
+      "The Warden's ledger recorded a name twice. The second entry had a different date.",
+  },
+];
+
 export default function VerasanthLorePage() {
   return (
     <>
@@ -188,6 +236,38 @@ export default function VerasanthLorePage() {
           <p className="okb-body">
             Each guild believes it serves its own purpose. The city may know
             better.
+          </p>
+        </Container>
+      </section>
+
+      {/* TODO: pull timeline entries from content/timeline/ or API when volume
+          warrants dynamic loading */}
+      <section className="bg-okb-bg-elevated py-16 md:py-24">
+        <Container size="text" className="space-y-6">
+          <SectionHeading title="Recorded Events" />
+          <p className="okb-body">
+            Not everything that happens in Verasanth is recorded. The ledger
+            keeps what it chooses. These are the events it has chosen — so far.
+          </p>
+          <ul className="list-none p-0">
+            {VERASANTH_TIMELINE_ENTRIES.map((entry, index) => (
+              <li
+                key={entry.ashenDate}
+                className={`flex flex-col gap-2 py-4 sm:flex-row sm:items-start sm:gap-8 ${
+                  index < VERASANTH_TIMELINE_ENTRIES.length - 1
+                    ? "border-b border-okb-border"
+                    : ""
+                }`}
+              >
+                <p className="okb-meta shrink-0 italic text-okb-muted sm:w-52">
+                  {entry.ashenDate}
+                </p>
+                <p className="okb-body min-w-0 flex-1">{entry.description}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="okb-meta italic text-okb-faint">
+            The ledger is not finished.
           </p>
         </Container>
       </section>
