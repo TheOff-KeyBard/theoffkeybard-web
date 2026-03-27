@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { HearthToggle } from "@/components/ui/HearthToggle";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,7 +24,6 @@ export default function RootLayout({
         <SiteHeader />
         <main className="pb-12">{children}</main>
         <SiteFooter />
-        <HearthToggle />
       </body>
     </html>
   );

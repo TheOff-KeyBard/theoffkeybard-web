@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const STORAGE_KEY = "okb_sound";
+/** Persists homepage tavern ambience preference only; audio never continues on other routes. */
+const STORAGE_KEY = "okb_hearth_homepage";
 
 export function HearthToggle() {
   const [on, setOn] = useState(false);
@@ -12,7 +13,15 @@ export function HearthToggle() {
 
   useEffect(() => {
     try {
-      if (localStorage.getItem(STORAGE_KEY) === "on") setOn(true);
+      let stored = localStorage.getItem(STORAGE_KEY);
+      if (stored !== "on" && stored !== "off") {
+        const legacy = localStorage.getItem("okb_sound");
+        if (legacy === "on" || legacy === "off") {
+          stored = legacy;
+          localStorage.setItem(STORAGE_KEY, legacy);
+        }
+      }
+      if (stored === "on") setOn(true);
     } catch {
       /* ignore */
     }
@@ -90,7 +99,9 @@ export function HearthToggle() {
     }
   }
 
-  const title = on ? "Tavern ambience is on" : "Hear the sounds of the tavern";
+  const title = on
+    ? "Tavern ambience on — only on the homepage; stops when you leave"
+    : "Play tavern ambience on the homepage (stops when you navigate away)";
 
   return (
     <button
@@ -98,8 +109,8 @@ export function HearthToggle() {
       onClick={handleClick}
       title={title}
       className={[
-        "fixed bottom-7 right-6 z-50",
-        "flex flex-col items-end gap-0.5 rounded-md border px-2 py-1.5",
+        "fixed bottom-7 right-6 z-50 max-w-[9.5rem]",
+        "flex flex-col items-end gap-0.5 rounded-md border px-2.5 py-2",
         "border-okb-border/50 bg-okb-bg/95 shadow-sm backdrop-blur-sm",
         "m-0 cursor-pointer text-left font-serif text-xs",
         "appearance-none",
@@ -112,9 +123,12 @@ export function HearthToggle() {
       aria-label={title}
     >
       <span aria-hidden>🔥</span>
-      <span className="tracking-wide">Hearth</span>
+      <span className="tracking-wide">Tavern hearth</span>
       <span className="font-sans text-[10px] uppercase tracking-wider text-okb-muted">
         {on ? "On" : "Off"}
+      </span>
+      <span className="text-right font-sans text-[9px] leading-tight text-okb-faint">
+        Homepage only
       </span>
     </button>
   );

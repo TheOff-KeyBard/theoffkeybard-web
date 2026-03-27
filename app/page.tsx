@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { ExploreTable } from "@/components/ui/ExploreTable";
+import { HearthToggle } from "@/components/ui/HearthToggle";
 import { HeroEnterVerasanth } from "@/components/ui/HeroEnterVerasanth";
 import { HeroText } from "@/components/ui/HeroText";
 import { RotatingLine } from "@/components/ui/RotatingLine";
@@ -103,6 +104,8 @@ export default function HomePage() {
           <RotatingLine />
         </Container>
       </section>
+
+      <HearthToggle />
     </div>
   );
 }
