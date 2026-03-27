@@ -2,10 +2,6 @@
 
 import { useState } from "react";
 
-/** ~header + link row + main pb-12 + footer block (mt-16 + py-8 + content) */
-const IFRAME_HEIGHT =
-  "min-h-0 flex-1 h-[calc(100dvh-22rem)] sm:h-[calc(100dvh-19rem)]";
-
 export default function VerasanthPlayPage() {
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
@@ -25,8 +21,8 @@ export default function VerasanthPlayPage() {
   }
 
   return (
-    <div className="w-full overflow-hidden bg-okb-bg">
-      <div className="flex flex-col px-3 py-2">
+    <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-okb-bg">
+      <div className="hidden shrink-0 flex-col px-3 py-2 md:flex">
         <a
           href={gameUrl}
           target="_blank"
@@ -36,7 +32,7 @@ export default function VerasanthPlayPage() {
           Open Verasanth in a new tab ↗
         </a>
       </div>
-      <div className={`relative flex flex-col ${IFRAME_HEIGHT}`}>
+      <div className="relative h-[100dvh] min-h-0 w-full flex-1 overflow-hidden md:h-[calc(100dvh-19rem)] md:min-h-[320px]">
         {!iframeLoaded && (
           <div
             className="absolute inset-0 z-10 flex items-center justify-center bg-okb-bg text-sm text-okb-faint"
@@ -48,7 +44,7 @@ export default function VerasanthPlayPage() {
         <iframe
           title="Verasanth"
           src={gameUrl}
-          className="h-full w-full min-h-0 flex-1 border-0"
+          className="absolute inset-0 h-full w-full border-0"
           onLoad={() => setIframeLoaded(true)}
           allow="fullscreen"
         />
