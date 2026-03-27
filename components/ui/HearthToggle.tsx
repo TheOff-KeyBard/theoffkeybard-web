@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/** Persists homepage tavern ambience preference only; audio never continues on other routes. */
 const STORAGE_KEY = "okb_hearth_homepage";
 
 export function HearthToggle() {
@@ -99,9 +98,7 @@ export function HearthToggle() {
     }
   }
 
-  const title = on
-    ? "Tavern ambience on — only on the homepage; stops when you leave"
-    : "Play tavern ambience on the homepage (stops when you navigate away)";
+  const title = on ? "Tavern ambience is playing" : "Hear the sounds of the tavern";
 
   return (
     <button
@@ -109,7 +106,7 @@ export function HearthToggle() {
       onClick={handleClick}
       title={title}
       className={[
-        "fixed bottom-7 right-6 z-50 max-w-[9.5rem]",
+        "fixed bottom-7 right-6 z-50",
         "flex flex-col items-end gap-0.5 rounded-md border px-2.5 py-2",
         "border-okb-border/50 bg-okb-bg/95 shadow-sm backdrop-blur-sm",
         "m-0 cursor-pointer text-left font-serif text-xs",
@@ -123,12 +120,9 @@ export function HearthToggle() {
       aria-label={title}
     >
       <span aria-hidden>🔥</span>
-      <span className="tracking-wide">Tavern hearth</span>
+      <span className="tracking-wide">Hearth</span>
       <span className="font-sans text-[10px] uppercase tracking-wider text-okb-muted">
         {on ? "On" : "Off"}
-      </span>
-      <span className="text-right font-sans text-[9px] leading-tight text-okb-faint">
-        Homepage only
       </span>
     </button>
   );

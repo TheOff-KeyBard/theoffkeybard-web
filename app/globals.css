@@ -8,6 +8,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    /* Keeps hash / in-page targets from sitting under the sticky header */
+    scroll-padding-top: 6.5rem;
+  }
+
   body {
     @apply min-h-screen bg-okb-bg text-okb-text antialiased;
   }

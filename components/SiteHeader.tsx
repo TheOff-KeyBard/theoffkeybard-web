@@ -6,13 +6,13 @@ import { DISCORD_INVITE_URL } from "@/lib/discord";
 
 const nav = [
   { href: "/ledger", label: "The Ashen Ledger" },
-  { href: "/about", label: "Behind the Quill" },
+  { href: "/journal", label: "The Bard’s Journal" },
   { href: "/verasanth", label: "Verasanth" },
 ] as const;
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-okb-border bg-okb-bg">
+    <header className="sticky top-0 z-50 w-full border-b border-okb-border bg-okb-bg">
       <Container className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/"

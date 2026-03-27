@@ -8,8 +8,10 @@ export const metadata: Metadata = {
   title: "The World of Verasanth",
 };
 
+/** Full-area link cards: equal height in grid, shared padding, safe text wrap. */
 const GUILD_LORE_CARD_CLASS =
-  "block border border-okb-border bg-okb-bg-elevated p-5 transition-colors hover:border-okb-accent";
+  "flex h-full min-h-0 min-w-0 w-full flex-col border border-okb-border bg-okb-bg-elevated p-5 transition-colors hover:border-okb-accent";
+const GUILD_LORE_CARD_BODY_CLASS = "okb-body mt-2 min-w-0 flex-1 break-words";
 
 const VERASANTH_TIMELINE_ENTRIES: { ashenDate: string; description: string }[] = [
   {
@@ -191,55 +193,55 @@ export default function VerasanthLorePage() {
           </p>
         </Container>
         <Container size="wide" className="mt-8">
-          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <li>
+          <ul className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <li className="flex min-h-0 min-w-0">
               <Link href="/verasanth/ashen-archive" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3">The Ashen Archive</h3>
-                <p className="okb-body mt-2">
+                <h3 className="okb-h3 shrink-0">The Ashen Archive</h3>
+                <p className={GUILD_LORE_CARD_BODY_CLASS}>
                   Keepers of memory, containment, and dangerous knowledge.
                 </p>
               </Link>
             </li>
-            <li>
+            <li className="flex min-h-0 min-w-0">
               <Link href="/verasanth/broken-banner" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3">The Broken Banner</h3>
-                <p className="okb-body mt-2">
+                <h3 className="okb-h3 shrink-0">The Broken Banner</h3>
+                <p className={GUILD_LORE_CARD_BODY_CLASS}>
                   Endurance, pressure, and survival given institutional form.
                 </p>
               </Link>
             </li>
-            <li>
+            <li className="flex min-h-0 min-w-0">
               <Link href="/verasanth/quiet-sanctum" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3">The Quiet Sanctum</h3>
-                <p className="okb-body mt-2">
+                <h3 className="okb-h3 shrink-0">The Quiet Sanctum</h3>
+                <p className={GUILD_LORE_CARD_BODY_CLASS}>
                   Healers, shepherds of hope, and a quiet defiance against despair.
                 </p>
               </Link>
             </li>
-            <li>
+            <li className="flex min-h-0 min-w-0">
               <Link href="/verasanth/stone-watch" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3">Stone Watch</h3>
-                <p className="okb-body mt-2">
+                <h3 className="okb-h3 shrink-0">The Stone Watch</h3>
+                <p className={GUILD_LORE_CARD_BODY_CLASS}>
                   Wardens of structure, foundations, and failing walls.
                 </p>
               </Link>
             </li>
-            <li>
+            <li className="flex min-h-0 min-w-0">
               <Link href="/verasanth/veil-market" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3">The Veil Market</h3>
-                <p className="okb-body mt-2">
+                <h3 className="okb-h3 shrink-0">The Veil Market</h3>
+                <p className={GUILD_LORE_CARD_BODY_CLASS}>
                   Information, evasion, and the shadow-economy beneath the official
                   city.
                 </p>
               </Link>
             </li>
-            <li>
+            <li className="flex min-h-0 min-w-0">
               <Link
                 href="/verasanth/umbral-covenant"
                 className={GUILD_LORE_CARD_CLASS}
               >
-                <h3 className="okb-h3">The Umbral Covenant</h3>
-                <p className="okb-body mt-2">
+                <h3 className="okb-h3 shrink-0">The Umbral Covenant</h3>
+                <p className={GUILD_LORE_CARD_BODY_CLASS}>
                   Those who work closest to corruption, shadow, and the truths most
                   people refuse to name.
                 </p>

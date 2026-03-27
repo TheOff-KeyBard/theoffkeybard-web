@@ -78,11 +78,11 @@ export const GUILD_LORE_META: Record<
       "The Quiet Sanctum tends what breaks quietly: breath, nerve, the small reasons people choose to continue. Their records read like bedside observations — careful, unwilling to dramatize what already hurts.",
   },
   "stone-watch": {
-    title: "Stone Watch",
+    title: "The Stone Watch",
     description:
-      "Guild lore from Stone Watch — structure, foundations, and failing walls.",
+      "Guild lore from the Stone Watch — structure, foundations, and failing walls.",
     intro:
-      "Stone Watch speaks in load and stress. They know where the city leans, where mortar lies, where a crack is cosmetic and where it is a warning. These notes are what they release when silence would cost more than speech.",
+      "The Stone Watch speaks in load and stress. They know where the city leans, where mortar lies, where a crack is cosmetic and where it is a warning. These notes are what they release when silence would cost more than speech.",
   },
   "veil-market": {
     title: "The Veil Market",

@@ -28,6 +28,14 @@ export default function JournalPage() {
             </p>
           </header>
 
+          <div className="border-t border-okb-border/50 pt-10">
+            <Card
+              title="Behind the Quill"
+              excerpt="Who writes here, and what this place is for — in plain voice, outside the fiction."
+              href="/about"
+            />
+          </div>
+
           {entries.length === 0 ? (
             <div className="border border-dashed border-okb-border bg-okb-bg-elevated px-6 py-10 text-center">
               <p className="okb-body text-okb-muted">Nothing written yet.</p>
