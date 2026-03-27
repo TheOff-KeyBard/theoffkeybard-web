@@ -12,6 +12,55 @@ export const metadata: Metadata = {
 const GUILD_LORE_CARD_CLASS =
   "flex h-full min-h-0 min-w-0 w-full flex-col border border-okb-border bg-okb-bg-elevated p-5 transition-colors hover:border-okb-accent";
 const GUILD_LORE_CARD_BODY_CLASS = "okb-body mt-2 min-w-0 flex-1 break-words";
+const GUILD_LORE_CARD_LEADER_CLASS =
+  "mt-4 font-serif text-sm font-semibold tracking-wide text-okb-text";
+const GUILD_LORE_CARD_LEADER_META_CLASS = "okb-meta mt-1";
+
+/** Guild hub cards: leader + race / title (canon Verasanth). */
+const VERASANTH_GUILD_CARDS = [
+  {
+    href: "/verasanth/ashen-archive",
+    title: "The Ashen Archive",
+    body: "Keepers of memory, containment, and dangerous knowledge.",
+    leader: "Vaelith Xyrelle",
+    leaderMeta: "Dak'Aridari — High PyreKeeper",
+  },
+  {
+    href: "/verasanth/broken-banner",
+    title: "The Broken Banner",
+    body: "Endurance, pressure, and survival given institutional form.",
+    leader: "Garruk Stonehide",
+    leaderMeta: "Silth — High WarMarshal",
+  },
+  {
+    href: "/verasanth/quiet-sanctum",
+    title: "The Quiet Sanctum",
+    body: "Healers, shepherds of hope, and a quiet defiance against despair.",
+    leader: "Halden Marr",
+    leaderMeta: "Human — High FlameShepherd",
+  },
+  {
+    href: "/verasanth/stone-watch",
+    title: "The Stone Watch",
+    body: "Wardens of structure, foundations, and failing walls.",
+    leader: "Rhyla Thornshield",
+    leaderMeta: "Cambral — High Warden",
+  },
+  {
+    href: "/verasanth/veil-market",
+    title: "The Veil Market",
+    body: "Information, evasion, and the shadow-economy beneath the official city.",
+    leader: "Lirael Quickstep",
+    leaderMeta: "Pan'Aridari — Veil-Master",
+  },
+  {
+    href: "/verasanth/umbral-covenant",
+    title: "The Umbral Covenant",
+    body: "Those who work closest to corruption, shadow, and the truths most people refuse to name.",
+    leader: "Serix Vaunt",
+    leaderMeta: "Ashborn — Voice of the Covenant",
+  },
+] as const;
 
 const VERASANTH_TIMELINE_ENTRIES: { ashenDate: string; description: string }[] = [
   {
@@ -155,6 +204,101 @@ export default function VerasanthLorePage() {
         </Container>
       </section>
 
+      {/* TODO: individual race pages, stat display, lore depth */}
+      <section className="bg-okb-bg-elevated py-16 md:py-24">
+        <Container size="text" className="space-y-6">
+          <SectionHeading title="The Races of Verasanth" />
+          <p className="okb-body">
+            Verasanth does not ask where you came from. It asks what you are
+            becoming. The city has drawn many peoples into its walls — each
+            shaped differently by what they found here.
+          </p>
+        </Container>
+        <Container size="wide" className="mt-8 space-y-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+              <h3 className="okb-h3">Ashborn</h3>
+              <p className="okb-meta italic">
+                Ember-Touched • Shadowbound
+              </p>
+              <p className="okb-body text-sm">
+                Humans reshaped by Verasanth&apos;s ancient fires. Ember-veins
+                glow faintly beneath their skin. They aren&apos;t infernal —
+                they&apos;re city-forged.
+              </p>
+            </div>
+            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+              <h3 className="okb-h3">Dak&apos;Aridari</h3>
+              <p className="okb-meta italic">Shadowbound • Streetcraft</p>
+              <p className="okb-body text-sm">
+                Born in the lightless depths. They see in shades of violet and
+                move with uncanny silence. Their culture values secrets, subtlety,
+                and survival in places where the city forgets itself.
+              </p>
+            </div>
+            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+              <h3 className="okb-h3">Pan&apos;Aridari</h3>
+              <p className="okb-meta italic">Streetcraft • Ember-Touched</p>
+              <p className="okb-body text-sm">
+                Surface-dwellers who navigate Verasanth like it&apos;s alive —
+                because to them, it is. They sense subtle shifts in streets,
+                crowds, and danger.
+              </p>
+            </div>
+            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+              <h3 className="okb-h3">Cambral</h3>
+              <p className="okb-meta italic">Ironblood • Warden</p>
+              <p className="okb-body text-sm">
+                Stone-touched descendants of the city&apos;s earliest builders.
+                Their bones are dense, their skin marked with faint mineral
+                patterns. They don&apos;t just live in Verasanth — they anchor
+                it.
+              </p>
+            </div>
+            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+              <h3 className="okb-h3">Silth</h3>
+              <p className="okb-meta italic">Ironblood • Warden</p>
+              <p className="okb-body text-sm">
+                Shaped generations ago by alchemical experiments meant to create
+                perfect soldiers. The results were unpredictable — but powerful.
+              </p>
+            </div>
+            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+              <h3 className="okb-h3">Human</h3>
+              <p className="okb-meta italic">All Instincts</p>
+              <p className="okb-body text-sm">
+                Adaptable and unpredictable, shaped by choice rather than
+                lineage. In a city that reshapes people, humans reshape right
+                back.
+              </p>
+            </div>
+            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+              <h3 className="okb-h3">Mal&apos;Aridari</h3>
+              <p className="okb-meta italic">Hearthborn • Warden</p>
+              <p className="okb-body text-sm">
+                A nomadic people marked with faint vine-like patterns along their
+                skin. Steady, loyal, and unyielding when defending those they
+                love. They see the city as a wounded giant — and wounded things
+                deserve tending.
+              </p>
+            </div>
+            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+              <h3 className="okb-h3">Darmerians</h3>
+              <p className="okb-meta italic">Hearthborn • Ironblood</p>
+              <p className="okb-body text-sm">
+                Sea-forged people from the drowned coast beyond Verasanth.
+                Broad-shouldered and loud-hearted, marked with faint salt-crystal
+                patterns. They see the city as another storm to weather — and
+                storms are faced together.
+              </p>
+            </div>
+          </div>
+          <p className="okb-meta italic text-okb-faint">
+            The city keeps everyone. What it does with them varies.
+          </p>
+        </Container>
+      </section>
+
       <section className="bg-okb-bg-elevated py-16 md:py-24">
         <Container size="text" className="space-y-6">
           {/* TODO: expansion — zone map, descent diagram, run hooks */}
@@ -194,59 +338,16 @@ export default function VerasanthLorePage() {
         </Container>
         <Container size="wide" className="mt-8">
           <ul className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <li className="flex min-h-0 min-w-0">
-              <Link href="/verasanth/ashen-archive" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3 shrink-0">The Ashen Archive</h3>
-                <p className={GUILD_LORE_CARD_BODY_CLASS}>
-                  Keepers of memory, containment, and dangerous knowledge.
-                </p>
-              </Link>
-            </li>
-            <li className="flex min-h-0 min-w-0">
-              <Link href="/verasanth/broken-banner" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3 shrink-0">The Broken Banner</h3>
-                <p className={GUILD_LORE_CARD_BODY_CLASS}>
-                  Endurance, pressure, and survival given institutional form.
-                </p>
-              </Link>
-            </li>
-            <li className="flex min-h-0 min-w-0">
-              <Link href="/verasanth/quiet-sanctum" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3 shrink-0">The Quiet Sanctum</h3>
-                <p className={GUILD_LORE_CARD_BODY_CLASS}>
-                  Healers, shepherds of hope, and a quiet defiance against despair.
-                </p>
-              </Link>
-            </li>
-            <li className="flex min-h-0 min-w-0">
-              <Link href="/verasanth/stone-watch" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3 shrink-0">The Stone Watch</h3>
-                <p className={GUILD_LORE_CARD_BODY_CLASS}>
-                  Wardens of structure, foundations, and failing walls.
-                </p>
-              </Link>
-            </li>
-            <li className="flex min-h-0 min-w-0">
-              <Link href="/verasanth/veil-market" className={GUILD_LORE_CARD_CLASS}>
-                <h3 className="okb-h3 shrink-0">The Veil Market</h3>
-                <p className={GUILD_LORE_CARD_BODY_CLASS}>
-                  Information, evasion, and the shadow-economy beneath the official
-                  city.
-                </p>
-              </Link>
-            </li>
-            <li className="flex min-h-0 min-w-0">
-              <Link
-                href="/verasanth/umbral-covenant"
-                className={GUILD_LORE_CARD_CLASS}
-              >
-                <h3 className="okb-h3 shrink-0">The Umbral Covenant</h3>
-                <p className={GUILD_LORE_CARD_BODY_CLASS}>
-                  Those who work closest to corruption, shadow, and the truths most
-                  people refuse to name.
-                </p>
-              </Link>
-            </li>
+            {VERASANTH_GUILD_CARDS.map((g) => (
+              <li key={g.href} className="flex min-h-0 min-w-0">
+                <Link href={g.href} className={GUILD_LORE_CARD_CLASS}>
+                  <h3 className="okb-h3 shrink-0">{g.title}</h3>
+                  <p className={GUILD_LORE_CARD_BODY_CLASS}>{g.body}</p>
+                  <p className={GUILD_LORE_CARD_LEADER_CLASS}>{g.leader}</p>
+                  <p className={GUILD_LORE_CARD_LEADER_META_CLASS}>{g.leaderMeta}</p>
+                </Link>
+              </li>
+            ))}
           </ul>
         </Container>
         <Container size="text" className="mt-8">
