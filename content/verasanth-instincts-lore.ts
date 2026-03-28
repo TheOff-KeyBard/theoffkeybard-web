@@ -1,6 +1,6 @@
 /**
- * Public lore blurbs for the /verasanth#instincts archive (Phase 1 roster).
- * Game mechanics live in the worker; this is atmosphere only. Phase 2: add rows when new instincts ship.
+ * Public lore blurbs for the instincts shelf (marketing site). Game mechanics live in the worker.
+ * Add rows when new instincts ship.
  */
 export const VERASANTH_INSTINCT_LORE: { name: string; description: string }[] = [
   {

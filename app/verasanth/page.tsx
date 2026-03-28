@@ -41,8 +41,9 @@ export default function VerasanthLorePage() {
       <section className="bg-okb-bg-elevated py-16 md:py-24">
         <Container size="wide" className="space-y-8">
           <p className="okb-body max-w-2xl">
-            Lore is shelved by topic. Open the index for every entry — including
-            shelves still being prepared.
+            What can be named has been set aside by kind — guild, blood, instinct,
+            echo. Some labels wait in the dark; the city is not finished sorting
+            what belongs to whom.
           </p>
           <ul className="grid grid-cols-1 gap-7 md:grid-cols-2 md:gap-8">
             {shelves.map((s) => (
@@ -63,10 +64,11 @@ export default function VerasanthLorePage() {
                 href={ARCHIVE_BASE}
                 className="text-okb-accent hover:text-okb-accent-h"
               >
-                Full archive index
-              </Link>{" "}
+                All shelves in one hall
+              </Link>
               <span className="text-okb-faint">
-                — reserved shelves and navigation.
+                {" "}
+                — names you can walk without losing the thread.
               </span>
             </p>
           </div>

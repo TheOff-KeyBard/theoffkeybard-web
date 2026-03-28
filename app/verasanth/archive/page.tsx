@@ -3,9 +3,9 @@ import Link from "next/link";
 import { ArchiveCatalog } from "@/components/world-archive/ArchiveCatalog";
 
 export const metadata: Metadata = {
-  title: "World Archive — Index",
+  title: "World Archive",
   description:
-    "Index of Verasanth lore: open shelves, and those still being prepared.",
+    "Named shelves: what the city admits aloud, and what still waits in the margins.",
 };
 
 export default function ArchiveIndexPage() {
@@ -20,8 +20,8 @@ export default function ArchiveIndexPage() {
       </p>
       <h1 className="okb-h1 mb-4 md:mb-5">World Archive</h1>
       <p className="okb-body mb-10 max-w-xl text-okb-muted md:mb-12">
-        A single index. Each shelf opens on its own page — nothing here is meant
-        to be read in one sitting.
+        Each name leads elsewhere. Nothing gathered here asks to be swallowed
+        whole — only chosen, and carried as far as you dare.
       </p>
       <ArchiveCatalog />
     </div>

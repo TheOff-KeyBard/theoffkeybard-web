@@ -27,8 +27,8 @@ export default function GuildsArchivePage() {
           better.
         </p>
         <p className="okb-meta">
-          Fiction for each order lives under its own shelf — same paths as
-          before.
+          Deeper fictions for each order wait under their own sigil — the old
+          doors still answer.
         </p>
       </div>
     </div>

@@ -47,21 +47,21 @@ export const ARCHIVE_SECTIONS: ArchiveSection[] = [
     slug: "recorded-events",
     title: "Recorded Events",
     excerpt:
-      "Splinters the ledger let slip — plus paths into longer records.",
+      "Splinters the ledger let slip — and accounts that remember more than a single night.",
     status: "live",
   },
   {
     slug: "places-beneath",
     title: "Places Beneath the Streets",
     excerpt:
-      "Chambers and descents not yet catalogued for the open archive.",
+      "Chambers and descents the stone has not yet learned to name aloud.",
     status: "coming",
   },
   {
     slug: "notable-figures",
     title: "Notable Figures",
     excerpt:
-      "Names that recur in rumor, record, and flame. Entries forthcoming.",
+      "Names that recur in rumor, record, and flame — still gathering weight.",
     status: "coming",
   },
   {

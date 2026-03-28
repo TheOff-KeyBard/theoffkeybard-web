@@ -21,7 +21,7 @@ export function ArchiveCatalog() {
                   {s.excerpt}
                 </p>
                 <p className="okb-meta mt-4 uppercase tracking-wide text-okb-faint">
-                  Reserved for the archive
+                  Unwritten — for now
                 </p>
               </div>
             </li>

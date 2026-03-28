@@ -83,14 +83,14 @@ export async function GuildLoreEntryArticle({
                 href="/verasanth/archive/guilds"
                 className="text-okb-accent hover:text-okb-accent-h"
               >
-                Guilds in the archive
+                All orders named together
               </Link>
             </p>
             <Link
               href={`/verasanth/${guildKey}`}
               className="okb-meta block text-okb-accent hover:text-okb-accent-h"
             >
-              ← Back to {meta.title}
+              More from this order
             </Link>
           </div>
         </article>

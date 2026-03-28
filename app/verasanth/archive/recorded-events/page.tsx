@@ -6,7 +6,7 @@ import { RecordedEventsFragments } from "@/components/verasanth/RecordedEventsFr
 export const metadata: Metadata = {
   title: "Recorded Events",
   description:
-    "Splinters the ledger allowed out — and where to read longer accounts.",
+    "Splinters the ledger allowed out — and longer accounts that outlive a single night.",
 };
 
 export default function RecordedEventsArchivePage() {
@@ -21,11 +21,11 @@ export default function RecordedEventsArchivePage() {
       </p>
       <RecordedEventsFragments />
       <p className="okb-meta mt-6 italic text-okb-faint">
-        Refresh the page; the city may offer a different shard.
+        Return when you will — the ledger sometimes offers a different shard.
       </p>
       <div className="okb-body mt-12 max-w-3xl space-y-4 border-t border-okb-border pt-10 text-sm text-okb-muted">
         <p className="font-serif text-base font-semibold text-okb-text">
-          Longer records
+          What remembers longer
         </p>
         <p>
           <Link href="/ledger" className="text-okb-accent hover:text-okb-accent-h">
@@ -44,7 +44,7 @@ export default function RecordedEventsArchivePage() {
           >
             Where Verasanth Stands
           </Link>{" "}
-          — one thread on the city as it is now.
+          — a reckoning with the city as it stands.
         </p>
       </div>
     </div>

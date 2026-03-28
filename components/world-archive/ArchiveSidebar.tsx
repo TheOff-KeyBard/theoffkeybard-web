@@ -20,12 +20,12 @@ function navClass(active: boolean, muted: boolean) {
 
 export function ArchiveSidebar({ currentSlug }: { currentSlug: string }) {
   return (
-    <nav aria-label="World archive" className="space-y-1">
+    <nav aria-label="World archive shelves" className="space-y-1">
       <Link
         href={ARCHIVE_BASE}
         className={navClass(currentSlug === "", false)}
       >
-        Index
+        All shelves
       </Link>
       {ARCHIVE_SECTIONS.map((s: ArchiveSection) => {
         const muted = s.status === "coming";
@@ -33,10 +33,14 @@ export function ArchiveSidebar({ currentSlug }: { currentSlug: string }) {
         const active = s.slug === currentSlug;
         if (muted) {
           return (
-            <span key={s.slug} className={navClass(false, true)} title="Coming later">
+            <span
+              key={s.slug}
+              className={navClass(false, true)}
+              title="Not yet set down"
+            >
               {s.title}
               <span className="okb-meta ml-1 text-[0.65rem] uppercase tracking-wide">
-                soon
+                quiet
               </span>
             </span>
           );

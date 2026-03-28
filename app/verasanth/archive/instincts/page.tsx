@@ -30,7 +30,7 @@ export default function InstinctsArchivePage() {
         ))}
       </div>
       <p className="okb-meta mt-8 italic text-okb-faint">
-        Phase 1 record. The list will grow when the city admits more.
+        The roster is not closed. The city names only what repeats.
       </p>
     </div>
   );

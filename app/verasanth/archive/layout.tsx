@@ -4,7 +4,7 @@ import { ArchiveLayoutShell } from "@/components/world-archive/ArchiveLayoutShel
 export const metadata: Metadata = {
   title: "World Archive",
   description:
-    "Curated shelves: the city, guilds, peoples, instincts, and recorded echoes.",
+    "The city, guilds, peoples, instincts, and what the ledger failed to swallow.",
 };
 
 export default function VerasanthArchiveLayout({

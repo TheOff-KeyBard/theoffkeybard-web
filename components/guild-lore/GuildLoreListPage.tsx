@@ -22,7 +22,9 @@ export function GuildLoreListPage({ guildKey }: { guildKey: GuildKey }) {
 
           {entries.length === 0 ? (
             <div className="border border-dashed border-okb-border bg-okb-bg-elevated px-6 py-10 text-center">
-              <p className="okb-body text-okb-muted">No entries released yet.</p>
+              <p className="okb-body text-okb-muted">
+                Nothing here bears the Ledger&apos;s mark — yet.
+              </p>
             </div>
           ) : (
             <ul className="grid gap-6 sm:grid-cols-1">
@@ -51,7 +53,7 @@ export function GuildLoreListPage({ guildKey }: { guildKey: GuildKey }) {
               href="/verasanth/archive/guilds"
               className="text-okb-accent hover:text-okb-accent-h"
             >
-              Guilds in the archive
+              All orders named together
             </Link>
             <span className="mx-2 text-okb-border">·</span>
             <Link
