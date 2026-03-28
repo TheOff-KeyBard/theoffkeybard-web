@@ -8,6 +8,7 @@ const nav = [
   { href: "/ledger", label: "The Ashen Ledger" },
   { href: "/journal", label: "The Bard’s Journal" },
   { href: "/verasanth", label: "Verasanth" },
+  { href: "/verasanth/archive", label: "World Archive" },
 ] as const;
 
 export function SiteHeader() {

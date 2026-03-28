@@ -48,10 +48,17 @@ export function GuildLoreListPage({ guildKey }: { guildKey: GuildKey }) {
 
           <p className="text-sm text-okb-faint">
             <Link
+              href="/verasanth/archive/guilds"
+              className="text-okb-accent hover:text-okb-accent-h"
+            >
+              Guilds in the archive
+            </Link>
+            <span className="mx-2 text-okb-border">·</span>
+            <Link
               href="/verasanth"
               className="text-okb-accent hover:text-okb-accent-h"
             >
-              ← Back to Verasanth
+              Verasanth
             </Link>
           </p>
         </div>

@@ -12,7 +12,11 @@ function pathIsActive(pathname: string, href: string): boolean {
   if (href === "/ledger") {
     return pathname === "/ledger" || pathname.startsWith("/ledger/");
   }
+  if (href === "/verasanth/archive") {
+    return pathname.startsWith("/verasanth/archive");
+  }
   if (href === "/verasanth") {
+    if (pathname.startsWith("/verasanth/archive")) return false;
     return pathname === "/verasanth" || pathname.startsWith("/verasanth/");
   }
   return pathname === href;

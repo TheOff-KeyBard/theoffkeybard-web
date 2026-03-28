@@ -76,7 +76,14 @@ export async function GuildLoreEntryArticle({
                 href="/verasanth"
                 className="text-okb-accent hover:text-okb-accent-h"
               >
-                ← Back to Verasanth
+                Verasanth
+              </Link>
+              <span className="mx-2 text-okb-faint">·</span>
+              <Link
+                href="/verasanth/archive/guilds"
+                className="text-okb-accent hover:text-okb-accent-h"
+              >
+                Guilds in the archive
               </Link>
             </p>
             <Link
