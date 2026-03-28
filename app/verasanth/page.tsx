@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { RecordedEventsFragments } from "@/components/verasanth/RecordedEventsFragments";
+import { VERASANTH_INSTINCT_LORE } from "@/content/verasanth-instincts-lore";
 
 export const metadata: Metadata = {
-  title: "The World of Verasanth",
+  title: "The City in Fragments",
+  description:
+    "A record of what can still be named — guilds, races, instincts, and echoes from the ledger.",
 };
 
 /** Full-area link cards: equal height in grid, shared padding, safe text wrap. */
@@ -62,66 +67,20 @@ const VERASANTH_GUILD_CARDS = [
   },
 ] as const;
 
-const VERASANTH_TIMELINE_ENTRIES: { ashenDate: string; description: string }[] = [
-  {
-    ashenDate: "Mark 3, Turn of Embers, Cycle 6312",
-    description:
-      "The first light recorded. The city opened its eyes. Something noticed.",
-  },
-  {
-    ashenDate: "Mark 4, Turn of Veils, Cycle 6312",
-    description:
-      "Echoes noted in the stone walls of the lower passages. The walls were already listening.",
-  },
-  {
-    ashenDate: "Mark 6, Turn of Shadows, Cycle 6312",
-    description:
-      "A descender passed the last door and did not come back the same.",
-  },
-  {
-    ashenDate: "Mark 7, Turn of Embers, Cycle 6312",
-    description:
-      "A stranger arrived at the tavern. The ledger already had their name.",
-  },
-  {
-    ashenDate: "Mark 8, Turn of Stone, Cycle 6312",
-    description:
-      "The Archive's containment flame shifted. The ash did not settle.",
-  },
-  {
-    ashenDate: "Mark 11, Turn of Echoes, Cycle 6312",
-    description:
-      "The Sanctum flame responded to something it should not have been able to hear.",
-  },
-  {
-    ashenDate: "Mark 17, Turn of Embers, Cycle 6312",
-    description:
-      "The quiet step noticed in the southern alleys. Something learned to move without disturbing the dust.",
-  },
-  {
-    ashenDate: "Mark 19, Turn of Stone, Cycle 6312",
-    description:
-      "The Veil Market made its first recorded move. No one saw it happen.",
-  },
-  {
-    ashenDate: "Mark 22, Turn of Veils, Cycle 6312",
-    description:
-      "The Warden's ledger recorded a name twice. The second entry had a different date.",
-  },
-];
+const RACE_CARD_SHELL =
+  "rounded-sm border border-okb-border bg-okb-bg-elevated p-5";
 
 export default function VerasanthLorePage() {
   return (
     <>
       <section className="bg-okb-bg py-16 md:py-24">
         <Container size="text" className="space-y-6">
-          {/* TODO: expansion — map teaser, quick links to deep lore */}
-          <h1 className="okb-h1">The World of Verasanth</h1>
+          <h1 className="okb-h1">The City in Fragments</h1>
           <p className="okb-hero-intro">
-            Verasanth is not a place you visit. It is a place that keeps you.
+            A record of what can still be named.
           </p>
           <p className="okb-body">
-            A city built over something older than the structures above it. The
+            Verasanth is not a place you visit. It is a place that keeps you. The
             guilds, the sewers, the firelight — all of it is maintenance. All of
             it is containment.
           </p>
@@ -137,8 +96,55 @@ export default function VerasanthLorePage() {
       </section>
 
       <section className="bg-okb-bg-elevated py-16 md:py-24">
+        <Container size="wide" className="space-y-6">
+          <SectionHeading title="The archive" />
+          <p className="okb-body max-w-2xl">
+            Four doors. What lies behind each is still being written — but these
+            are the names the city has agreed to hold.
+          </p>
+          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <li>
+              <Card
+                className="bg-okb-bg"
+                title="Guilds of Verasanth"
+                excerpt="The orders that hold the city together — or keep it from collapsing. Six doctrines. Six ways of surviving what Verasanth has become."
+                href="/verasanth#guilds-of-verasanth"
+                emphasizeTitle
+              />
+            </li>
+            <li>
+              <Card
+                className="bg-okb-bg"
+                title="Races of Verasanth"
+                excerpt="The peoples shaped by fire, stone, storm, and choice. Some were brought here. Some arrived willingly. None remain unchanged."
+                href="/verasanth#races-of-verasanth"
+                emphasizeTitle
+              />
+            </li>
+            <li>
+              <Card
+                className="bg-okb-bg"
+                title="Instincts"
+                excerpt="Not roles. Not professions. Memories. The city awakens something in you — a fragment of what you were, or what it believes you to be."
+                href="/verasanth#instincts"
+                emphasizeTitle
+              />
+            </li>
+            <li>
+              <Card
+                className="bg-okb-bg"
+                title="Recorded Events"
+                excerpt="Things the city remembers imperfectly. Fractures, sightings, disturbances. Not history — but echoes."
+                href="/verasanth#recorded-events"
+                emphasizeTitle
+              />
+            </li>
+          </ul>
+        </Container>
+      </section>
+
+      <section className="bg-okb-bg py-16 md:py-24">
         <Container size="text" className="space-y-6">
-          {/* TODO: expansion — illustrated primer, timeline, key terms */}
           <SectionHeading title="What Is Verasanth?" />
           <div className="space-y-4">
             <p className="okb-body">
@@ -163,9 +169,8 @@ export default function VerasanthLorePage() {
         </Container>
       </section>
 
-      <section className="bg-okb-bg py-16 md:py-24">
+      <section className="bg-okb-bg-elevated py-16 md:py-24">
         <Container size="text" className="space-y-6">
-          {/* TODO: expansion — sewers, ledger, characters, district index */}
           <SectionHeading title="What Lies Within" />
           <ul className="list-disc space-y-2 pl-6 okb-body text-okb-text">
             <li>A city that records more than it reveals</li>
@@ -204,8 +209,70 @@ export default function VerasanthLorePage() {
         </Container>
       </section>
 
-      {/* TODO: individual race pages, stat display, lore depth */}
-      <section className="bg-okb-bg-elevated py-16 md:py-24">
+      <section className="bg-okb-bg py-16 md:py-24">
+        <Container size="text" className="space-y-6">
+          <SectionHeading title="The Descent" />
+          <div className="space-y-4">
+            <p className="okb-body">
+              Every road in Verasanth eventually points downward.
+            </p>
+            <p className="okb-body">
+              What begins in the inn and market gives way to sewer stone, then
+              deeper chambers, then places where the city stops pretending to be
+              a city at all.
+            </p>
+            <p className="okb-body">
+              The descent is not just physical. It is structural. Psychological.
+              Spiritual.
+            </p>
+            <p className="okb-body">You do not go deeper only into the world.</p>
+            <p className="okb-body">You go deeper into what the world is.</p>
+          </div>
+          <p className="okb-meta italic text-okb-muted">
+            The further down you travel, the less likely it is that the city will
+            let you remain unchanged.
+          </p>
+        </Container>
+      </section>
+
+      <section
+        id="guilds-of-verasanth"
+        className="scroll-mt-24 bg-okb-bg-elevated py-16 md:py-24"
+      >
+        <Container size="text" className="space-y-6">
+          <SectionHeading title="The Guilds of Verasanth" />
+          <p className="okb-body">
+            The guilds are not simply political factions. They are functions. Each
+            keeps some part of the city operating, whether they understand that
+            role or not.
+          </p>
+        </Container>
+        <Container size="wide" className="mt-8">
+          <ul className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {VERASANTH_GUILD_CARDS.map((g) => (
+              <li key={g.href} className="flex min-h-0 min-w-0">
+                <Link href={g.href} className={GUILD_LORE_CARD_CLASS}>
+                  <h3 className="okb-h3 shrink-0">{g.title}</h3>
+                  <p className={GUILD_LORE_CARD_BODY_CLASS}>{g.body}</p>
+                  <p className={GUILD_LORE_CARD_LEADER_CLASS}>{g.leader}</p>
+                  <p className={GUILD_LORE_CARD_LEADER_META_CLASS}>{g.leaderMeta}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Container>
+        <Container size="text" className="mt-8">
+          <p className="okb-body">
+            Each guild believes it serves its own purpose. The city may know
+            better.
+          </p>
+        </Container>
+      </section>
+
+      <section
+        id="races-of-verasanth"
+        className="scroll-mt-24 bg-okb-bg py-16 md:py-24"
+      >
         <Container size="text" className="space-y-6">
           <SectionHeading title="The Races of Verasanth" />
           <p className="okb-body">
@@ -216,7 +283,7 @@ export default function VerasanthLorePage() {
         </Container>
         <Container size="wide" className="mt-8 space-y-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+            <div className={RACE_CARD_SHELL}>
               <h3 className="okb-h3">Ashborn</h3>
               <p className="okb-meta italic">
                 Ember-Touched • Shadowbound
@@ -245,7 +312,7 @@ export default function VerasanthLorePage() {
                 </p>
               </div>
             </div>
-            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+            <div className={RACE_CARD_SHELL}>
               <h3 className="okb-h3">Dak&apos;Aridari</h3>
               <p className="okb-meta italic">Shadowbound • Streetcraft</p>
               <div className="space-y-3">
@@ -271,7 +338,7 @@ export default function VerasanthLorePage() {
                 </p>
               </div>
             </div>
-            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+            <div className={RACE_CARD_SHELL}>
               <h3 className="okb-h3">Pan&apos;Aridari</h3>
               <p className="okb-meta italic">Streetcraft • Ember-Touched</p>
               <div className="space-y-3">
@@ -300,7 +367,7 @@ export default function VerasanthLorePage() {
                 </p>
               </div>
             </div>
-            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+            <div className={RACE_CARD_SHELL}>
               <h3 className="okb-h3">Cambral</h3>
               <p className="okb-meta italic">Ironblood • Warden</p>
               <div className="space-y-3">
@@ -327,7 +394,7 @@ export default function VerasanthLorePage() {
                 </p>
               </div>
             </div>
-            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+            <div className={RACE_CARD_SHELL}>
               <h3 className="okb-h3">Silth</h3>
               <p className="okb-meta italic">Ironblood • Warden</p>
               <div className="space-y-3">
@@ -351,7 +418,7 @@ export default function VerasanthLorePage() {
                 </p>
               </div>
             </div>
-            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+            <div className={RACE_CARD_SHELL}>
               <h3 className="okb-h3">Human</h3>
               <p className="okb-meta italic">All Instincts</p>
               <div className="space-y-3">
@@ -380,7 +447,7 @@ export default function VerasanthLorePage() {
                 </p>
               </div>
             </div>
-            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+            <div className={RACE_CARD_SHELL}>
               <h3 className="okb-h3">Mal&apos;Aridari</h3>
               <p className="okb-meta italic">Hearthborn • Warden</p>
               <div className="space-y-3">
@@ -406,7 +473,7 @@ export default function VerasanthLorePage() {
                 <p className="okb-body text-sm">But they came anyway.</p>
               </div>
             </div>
-            <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
+            <div className={RACE_CARD_SHELL}>
               <h3 className="okb-h3">Darmerians</h3>
               <p className="okb-meta italic">Hearthborn • Ironblood</p>
               <div className="space-y-3">
@@ -439,100 +506,53 @@ export default function VerasanthLorePage() {
         </Container>
       </section>
 
-      <section className="bg-okb-bg-elevated py-16 md:py-24">
+      <section
+        id="instincts"
+        className="scroll-mt-24 bg-okb-bg-elevated py-16 md:py-24"
+      >
         <Container size="text" className="space-y-6">
-          {/* TODO: expansion — zone map, descent diagram, run hooks */}
-          <SectionHeading title="The Descent" />
-          <div className="space-y-4">
-            <p className="okb-body">
-              Every road in Verasanth eventually points downward.
-            </p>
-            <p className="okb-body">
-              What begins in the inn and market gives way to sewer stone, then
-              deeper chambers, then places where the city stops pretending to be
-              a city at all.
-            </p>
-            <p className="okb-body">
-              The descent is not just physical. It is structural. Psychological.
-              Spiritual.
-            </p>
-            <p className="okb-body">You do not go deeper only into the world.</p>
-            <p className="okb-body">You go deeper into what the world is.</p>
-          </div>
-          <p className="okb-meta italic text-okb-muted">
-            The further down you travel, the less likely it is that the city will
-            let you remain unchanged.
-          </p>
-        </Container>
-      </section>
-
-      <section className="bg-okb-bg py-16 md:py-24">
-        <Container size="text" className="space-y-6">
-          {/* TODO: expansion — guild subpages, roster teasers, faction standings */}
-          <SectionHeading title="The Guilds of Verasanth" />
+          <SectionHeading title="Instincts" />
           <p className="okb-body">
-            The guilds are not simply political factions. They are functions. Each
-            keeps some part of the city operating, whether they understand that
-            role or not.
+            Not every gift has a name yet. These are the ones the city has
+            repeated often enough to recognize — memories it plants, or that it
+            finds already sleeping in you.
           </p>
         </Container>
-        <Container size="wide" className="mt-8">
-          <ul className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {VERASANTH_GUILD_CARDS.map((g) => (
-              <li key={g.href} className="flex min-h-0 min-w-0">
-                <Link href={g.href} className={GUILD_LORE_CARD_CLASS}>
-                  <h3 className="okb-h3 shrink-0">{g.title}</h3>
-                  <p className={GUILD_LORE_CARD_BODY_CLASS}>{g.body}</p>
-                  <p className={GUILD_LORE_CARD_LEADER_CLASS}>{g.leader}</p>
-                  <p className={GUILD_LORE_CARD_LEADER_META_CLASS}>{g.leaderMeta}</p>
-                </Link>
-              </li>
+        <Container size="wide" className="mt-8 space-y-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {VERASANTH_INSTINCT_LORE.map((row) => (
+              <div key={row.name} className={RACE_CARD_SHELL}>
+                <h3 className="okb-h3">{row.name}</h3>
+                <p className="okb-body mt-3 text-sm">{row.description}</p>
+              </div>
             ))}
-          </ul>
-        </Container>
-        <Container size="text" className="mt-8">
-          <p className="okb-body">
-            Each guild believes it serves its own purpose. The city may know
-            better.
+          </div>
+          <p className="okb-meta italic text-okb-faint">
+            Phase 1 record. The list will grow when the city admits more.
           </p>
         </Container>
       </section>
 
-      {/* TODO: pull timeline entries from content/timeline/ or API when volume
-          warrants dynamic loading */}
-      <section className="bg-okb-bg-elevated py-16 md:py-24">
+      <section
+        id="recorded-events"
+        className="scroll-mt-24 bg-okb-bg py-16 md:py-24"
+      >
         <Container size="text" className="space-y-6">
           <SectionHeading title="Recorded Events" />
           <p className="okb-body">
             Not everything that happens in Verasanth is recorded. The ledger
-            keeps what it chooses. These are the events it has chosen — so far.
+            keeps what it chooses. Below are a few things it has let slip — not
+            the whole chronicle, only splinters.
           </p>
-          <ul className="list-none p-0">
-            {VERASANTH_TIMELINE_ENTRIES.map((entry, index) => (
-              <li
-                key={entry.ashenDate}
-                className={`flex flex-col gap-2 py-4 sm:flex-row sm:items-start sm:gap-8 ${
-                  index < VERASANTH_TIMELINE_ENTRIES.length - 1
-                    ? "border-b border-okb-border"
-                    : ""
-                }`}
-              >
-                <p className="okb-meta shrink-0 italic text-okb-muted sm:w-52">
-                  {entry.ashenDate}
-                </p>
-                <p className="okb-body min-w-0 flex-1">{entry.description}</p>
-              </li>
-            ))}
-          </ul>
+          <RecordedEventsFragments />
           <p className="okb-meta italic text-okb-faint">
-            The ledger is not finished.
+            Refresh the page; the city may offer a different shard.
           </p>
         </Container>
       </section>
 
       <section className="bg-okb-bg-elevated py-16 md:py-24">
         <Container size="text" className="space-y-6">
-          {/* TODO: expansion — alternate CTAs, play requirements, lore catch-up */}
           <SectionHeading title="Enter the City" />
           <div className="space-y-4">
             <p className="okb-body">Some stories are safer at a distance.</p>
