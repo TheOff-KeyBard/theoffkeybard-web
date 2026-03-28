@@ -22,7 +22,7 @@ export default function VerasanthPlayPage() {
 
   return (
     <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-okb-bg">
-      <div className="hidden shrink-0 flex-col px-3 py-2 md:flex">
+      <div className="hidden shrink-0 flex-col border-b border-okb-border px-3 py-2 md:flex">
         <a
           href={gameUrl}
           target="_blank"
@@ -32,7 +32,7 @@ export default function VerasanthPlayPage() {
           Open Verasanth in a new tab ↗
         </a>
       </div>
-      <div className="relative h-[100dvh] min-h-0 w-full flex-1 overflow-hidden md:h-[calc(100dvh-19rem)] md:min-h-[320px]">
+      <div className="flex-1 min-h-0 relative w-full overflow-hidden">
         {!iframeLoaded && (
           <div
             className="absolute inset-0 z-10 flex items-center justify-center bg-okb-bg text-sm text-okb-faint"
