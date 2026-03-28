@@ -11,6 +11,20 @@ export type JournalFrontmatter = {
   excerpt: string;
 };
 
+/**
+ * gray-matter (and MDX frontmatter) often parse `date: YYYY-MM-DD` as a JS Date.
+ * React cannot render Date objects as children; normalize to ISO date string.
+ */
+export function normalizeJournalDate(value: unknown): string {
+  if (value instanceof Date) {
+    return value.toISOString().slice(0, 10);
+  }
+  if (value == null || value === "") {
+    return "";
+  }
+  return String(value);
+}
+
 export function getJournalSlugs(): string[] {
   if (!fs.existsSync(CONTENT_DIR)) {
     return [];
@@ -31,11 +45,11 @@ export function getAllJournalEntries(): (JournalFrontmatter & { slug: string })[
       return {
         slug,
         title: data.title as string,
-        date: data.date as string,
+        date: normalizeJournalDate(data.date),
         excerpt: data.excerpt as string,
       };
     })
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 }
 
 export function getJournalSource(slug: string): string | null {

@@ -12,6 +12,7 @@ import { TavernDivider } from "@/components/ui/TavernDivider";
 import {
   getJournalSlugs,
   getJournalSource,
+  normalizeJournalDate,
   type JournalFrontmatter,
 } from "@/lib/journal";
 
@@ -59,16 +60,18 @@ export default async function LedgerEntryPage({ params }: PageProps) {
     components: taleMdxComponents,
   });
 
+  const dateStr = normalizeJournalDate(frontmatter.date);
+
   return (
     <section className="bg-okb-bg py-16 md:py-24">
       <Container>
         <article>
           <header className="mb-8 space-y-3 pb-8">
             <time
-              dateTime={frontmatter.date}
+              dateTime={dateStr}
               className="okb-meta block uppercase tracking-wide"
             >
-              {frontmatter.date}
+              {dateStr}
             </time>
 
             <h1 className="okb-h1">{frontmatter.title}</h1>
