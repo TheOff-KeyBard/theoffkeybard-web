@@ -14,7 +14,7 @@ type CardProps = {
 };
 
 const cardClasses =
-  "block border border-okb-border bg-okb-bg-elevated p-5 hover:border-okb-accent";
+  "block border border-okb-border bg-okb-bg-elevated p-5 transition-[border-color,box-shadow] duration-200 hover:border-okb-accent hover:shadow-sm";
 
 export function Card({
   title,
@@ -40,7 +40,17 @@ export function Card({
       ) : null}
       <h3 className={titleClass}>{title}</h3>
       {excerpt ? (
-        <p className={tag ? "okb-body mt-2" : "okb-body mt-3"}>{excerpt}</p>
+        <p
+          className={
+            tag
+              ? "okb-body mt-2"
+              : emphasizeTitle
+                ? "okb-body mt-4 max-w-prose text-pretty"
+                : "okb-body mt-3"
+          }
+        >
+          {excerpt}
+        </p>
       ) : null}
     </>
   );
