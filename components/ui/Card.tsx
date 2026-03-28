@@ -14,7 +14,7 @@ type CardProps = {
 };
 
 const cardClasses =
-  "block border border-okb-border bg-okb-bg-elevated p-5 transition-[border-color,box-shadow] duration-200 hover:border-okb-accent hover:shadow-sm";
+  "flex min-h-0 flex-col border border-okb-border bg-okb-bg-elevated p-5 transition-[border-color,box-shadow] duration-200 hover:border-okb-accent hover:shadow-sm";
 
 export function Card({
   title,

@@ -27,7 +27,6 @@ export async function GuildLoreEntryArticle({
   const source = getGuildEntrySource(guildKey, slug);
   if (!source) return null;
 
-  const meta = GUILD_LORE_META[guildKey];
   const { content, frontmatter } = await compileMDX<GuildEntryFrontmatter>({
     source,
     options: {

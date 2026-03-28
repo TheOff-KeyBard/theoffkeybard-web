@@ -66,10 +66,10 @@ export function ExploreTable({ discordUrl }: ExploreTableProps) {
   }, []);
 
   const cards = [
-    <Card key="archives" className="bg-okb-bg" title="The Ashen Ledger" excerpt="Entries that slipped through the cracks. Fragments, rumors, and the kind of writing a city produces when it starts remembering itself." href="/ledger" emphasizeTitle />,
-    <Card key="tavern" className="bg-okb-bg" title="The Bards Journal" excerpt="Where the Bard keeps their notes — design sketches, reflections, and half‑formed ideas. Not the city itself, but the fire that feeds it." href="/journal" emphasizeTitle />,
-    <Card key="verasanth" className="bg-okb-bg" title="The City in Fragments" excerpt="Guild, blood, instinct, and what the ledger failed to hold — named where the stone will allow it." href="/verasanth" emphasizeTitle />,
-    <Card key="discord" className="bg-okb-bg" title="Join the Tavern" excerpt="A hearth out of the wind. Quiet voices, stray threads of lore, and the sense that something in the city is still listening." href={discordUrl} emphasizeTitle external />,
+    <Card key="archives" className="h-full w-full bg-okb-bg" title="The Ashen Ledger" excerpt="Entries that slipped through the cracks. Fragments, rumors, and the kind of writing a city produces when it starts remembering itself." href="/ledger" emphasizeTitle />,
+    <Card key="tavern" className="h-full w-full bg-okb-bg" title="The Bards Journal" excerpt="Where the Bard keeps their notes — design sketches, reflections, and half‑formed ideas. Not the city itself, but the fire that feeds it." href="/journal" emphasizeTitle />,
+    <Card key="verasanth" className="h-full w-full bg-okb-bg" title="The City in Fragments" excerpt="Guild, blood, instinct, and what the ledger failed to hold — named where the stone will allow it." href="/verasanth" emphasizeTitle />,
+    <Card key="discord" className="h-full w-full bg-okb-bg" title="Join the Tavern" excerpt="A hearth out of the wind. Quiet voices, stray threads of lore, and the sense that something in the city is still listening." href={discordUrl} emphasizeTitle external />,
   ];
 
   return (
@@ -81,9 +81,11 @@ export function ExploreTable({ discordUrl }: ExploreTableProps) {
             <p className="mt-2 text-center font-serif text-sm italic text-okb-faint/80 sm:text-left">{hintLine}</p>
           ) : null}
         </div>
-        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <ul className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2">
           {order.map((i) => (
-            <li key={CARD_KEYS[i]}>{cards[i]}</li>
+            <li key={CARD_KEYS[i]} className="flex h-full min-h-0 w-full">
+              {cards[i]}
+            </li>
           ))}
         </ul>
       </Container>
