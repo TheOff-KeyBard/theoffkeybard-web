@@ -221,76 +221,216 @@ export default function VerasanthLorePage() {
               <p className="okb-meta italic">
                 Ember-Touched • Shadowbound
               </p>
-              <p className="okb-body text-sm">
-                Humans reshaped by Verasanth&apos;s ancient fires. Ember-veins
-                glow faintly beneath their skin. They aren&apos;t infernal —
-                they&apos;re city-forged.
-              </p>
+              <div className="space-y-3">
+                <p className="okb-body text-sm">
+                  Humans reshaped by Verasanth&apos;s ancient fires.
+                  Ember-veins pulse faintly beneath their skin, brightening with
+                  emotion. They aren&apos;t infernal — they are the city&apos;s
+                  first adaptation.
+                </p>
+                <p className="okb-body text-sm">
+                  The Pale Fires didn&apos;t kill the earliest arrivals. They
+                  rewrote them. Their bodies learned to vent emotional overload
+                  through ember-veins. Their senses sharpened to feel the
+                  city&apos;s shifts. Their presence affects rooms in ways they
+                  don&apos;t fully control.
+                </p>
+                <p className="okb-body text-sm">
+                  The Ledger has no record of their origin. It began recording
+                  after they arrived.
+                </p>
+                <p className="okb-body text-sm">
+                  Some believe the city still recognizes them. They are probably
+                  right.
+                </p>
+              </div>
             </div>
             <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
               <h3 className="okb-h3">Dak&apos;Aridari</h3>
               <p className="okb-meta italic">Shadowbound • Streetcraft</p>
-              <p className="okb-body text-sm">
-                Born in the lightless depths. They see in shades of violet and
-                move with uncanny silence. Their culture values secrets, subtlety,
-                and survival in places where the city forgets itself.
-              </p>
+              <div className="space-y-3">
+                <p className="okb-body text-sm">
+                  The Dak&apos;Aridari were not born beneath Verasanth. They were
+                  left there.
+                </p>
+                <p className="okb-body text-sm">
+                  In the lightless strata where stone remembers more than people
+                  do, they learned to see without light, to move without sound, and
+                  to listen to the city in ways others cannot.
+                </p>
+                <p className="okb-body text-sm">
+                  They do not fear the dark. They understand it.
+                </p>
+                <p className="okb-body text-sm">
+                  The Ledger records them clearly. The demon cannot navigate
+                  without them.
+                </p>
+                <p className="okb-body text-sm">
+                  And somewhere beneath the city, there are places that will only
+                  open to them.
+                </p>
+              </div>
             </div>
             <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
               <h3 className="okb-h3">Pan&apos;Aridari</h3>
               <p className="okb-meta italic">Streetcraft • Ember-Touched</p>
-              <p className="okb-body text-sm">
-                Surface-dwellers who navigate Verasanth like it&apos;s alive —
-                because to them, it is. They sense subtle shifts in streets,
-                crowds, and danger.
-              </p>
+              <div className="space-y-3">
+                <p className="okb-body text-sm">
+                  The Pan&apos;Aridari were not broken by Verasanth. They were
+                  aligned.
+                </p>
+                <p className="okb-body text-sm">
+                  Where others resist the city or endure it, the Pan&apos;Aridari
+                  move with it — reading its shifting streets, its crowded
+                  rhythms, its subtle intentions.
+                </p>
+                <p className="okb-body text-sm">
+                  They do not predict the future.
+                </p>
+                <p className="okb-body text-sm">
+                  They feel where it is about to go.
+                </p>
+                <p className="okb-body text-sm">
+                  The demon cannot read the city&apos;s intent. The
+                  Pan&apos;Aridari can follow it.
+                </p>
+                <p className="okb-body text-sm">
+                  And somewhere within that flow, the city is hiding something it
+                  does not want found.
+                </p>
+              </div>
             </div>
             <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
               <h3 className="okb-h3">Cambral</h3>
               <p className="okb-meta italic">Ironblood • Warden</p>
-              <p className="okb-body text-sm">
-                Stone-touched descendants of the city&apos;s earliest builders.
-                Their bones are dense, their skin marked with faint mineral
-                patterns. They don&apos;t just live in Verasanth — they anchor
-                it.
-              </p>
+              <div className="space-y-3">
+                <p className="okb-body text-sm">
+                  The Cambral were the first to answer the call beneath
+                  Verasanth.
+                </p>
+                <p className="okb-body text-sm">
+                  They came not for conquest, nor survival — but because
+                  something in the deep stone resonated with purpose.
+                </p>
+                <p className="okb-body text-sm">
+                  They built what they did not understand.
+                </p>
+                <p className="okb-body text-sm">
+                  And now, as the city begins to wake, they are the only ones who
+                  can feel where it is beginning to fail.
+                </p>
+                <p className="okb-body text-sm">They did not shape the city.</p>
+                <p className="okb-body text-sm">They gave it form.</p>
+                <p className="okb-body text-sm">
+                  And something beneath it is still trying to finish what they
+                  started.
+                </p>
+              </div>
             </div>
             <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
               <h3 className="okb-h3">Silth</h3>
               <p className="okb-meta italic">Ironblood • Warden</p>
-              <p className="okb-body text-sm">
-                Shaped generations ago by alchemical experiments meant to create
-                perfect soldiers. The results were unpredictable — but powerful.
-              </p>
+              <div className="space-y-3">
+                <p className="okb-body text-sm">The Silth were not born.</p>
+                <p className="okb-body text-sm">They were made.</p>
+                <p className="okb-body text-sm">
+                  Forged through alchemy by those who feared something was wrong
+                  in the world — but did not understand what it was.
+                </p>
+                <p className="okb-body text-sm">
+                  They were created to stand against a threat no one could name.
+                </p>
+                <p className="okb-body text-sm">And now they stand inside it.</p>
+                <p className="okb-body text-sm">
+                  The Coalition that built them has fractured. The people they
+                  were made to protect no longer stand together.
+                </p>
+                <p className="okb-body text-sm">
+                  And somewhere in Verasanth, the thing they were designed to
+                  face is still waiting to be understood.
+                </p>
+              </div>
             </div>
             <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
               <h3 className="okb-h3">Human</h3>
               <p className="okb-meta italic">All Instincts</p>
-              <p className="okb-body text-sm">
-                Adaptable and unpredictable, shaped by choice rather than
-                lineage. In a city that reshapes people, humans reshape right
-                back.
-              </p>
+              <div className="space-y-3">
+                <p className="okb-body text-sm">
+                  Adaptable and unpredictable, shaped by choice rather than
+                  lineage.
+                </p>
+                <p className="okb-body text-sm">
+                  In a city that reshapes everyone who enters it, humans are the
+                  ones who walked in without being pushed.
+                </p>
+                <p className="okb-body text-sm">
+                  They are not here because something brought them. They are here
+                  because they found a door that shouldn&apos;t exist — and
+                  opened it.
+                </p>
+                <p className="okb-body text-sm">
+                  Every other race in Verasanth was defined by something that
+                  happened to them.
+                </p>
+                <p className="okb-body text-sm">
+                  Humans are still deciding what defines them.
+                </p>
+                <p className="okb-body text-sm">
+                  That makes them the most dangerous thing in the city.
+                </p>
+              </div>
             </div>
             <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
               <h3 className="okb-h3">Mal&apos;Aridari</h3>
               <p className="okb-meta italic">Hearthborn • Warden</p>
-              <p className="okb-body text-sm">
-                A nomadic people marked with faint vine-like patterns along their
-                skin. Steady, loyal, and unyielding when defending those they
-                love. They see the city as a wounded giant — and wounded things
-                deserve tending.
-              </p>
+              <div className="space-y-3">
+                <p className="okb-body text-sm">
+                  The Mal&apos;Aridari were not taken by Verasanth. They came
+                  because something in the world was hurting.
+                </p>
+                <p className="okb-body text-sm">
+                  Where others endure the city or learn to navigate it, the
+                  Mal&apos;Aridari listen for wounds — and answer them.
+                </p>
+                <p className="okb-body text-sm">
+                  They do not see Verasanth as a prison.
+                </p>
+                <p className="okb-body text-sm">
+                  They see it as something that needs care.
+                </p>
+                <p className="okb-body text-sm">
+                  Something older than the city sent them here. It does not
+                  understand what they walked into.
+                </p>
+                <p className="okb-body text-sm">Neither do they.</p>
+                <p className="okb-body text-sm">But they came anyway.</p>
+              </div>
             </div>
             <div className="rounded-sm border border-okb-border bg-okb-bg-elevated p-5">
               <h3 className="okb-h3">Darmerians</h3>
               <p className="okb-meta italic">Hearthborn • Ironblood</p>
-              <p className="okb-body text-sm">
-                Sea-forged people from the drowned coast beyond Verasanth.
-                Broad-shouldered and loud-hearted, marked with faint salt-crystal
-                patterns. They see the city as another storm to weather — and
-                storms are faced together.
-              </p>
+              <div className="space-y-3">
+                <p className="okb-body text-sm">
+                  The Darmerians come from a coast that no longer exists.
+                </p>
+                <p className="okb-body text-sm">They did not flee the sea.</p>
+                <p className="okb-body text-sm">
+                  They followed the wound that made it betray them.
+                </p>
+                <p className="okb-body text-sm">
+                  Broad-shouldered, loud-hearted, marked with faint salt-crystal
+                  patterns on their skin — they carry the storm in their blood.
+                  Not as a threat. As a reminder.
+                </p>
+                <p className="okb-body text-sm">
+                  The same force that drowned their coast created Verasanth.
+                </p>
+                <p className="okb-body text-sm">They don&apos;t know that yet.</p>
+                <p className="okb-body text-sm">
+                  But they followed the pressure here. And they are not leaving
+                  until they understand what broke their world.
+                </p>
+              </div>
             </div>
           </div>
           <p className="okb-meta italic text-okb-faint">
