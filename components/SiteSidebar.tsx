@@ -162,7 +162,7 @@ function SidebarNavRows() {
 export function SiteSidebar() {
   return (
     <aside
-      className="sticky top-0 hidden h-screen shrink-0 border-r border-okb-border bg-okb-bg py-4 transition-all duration-200 ease-in-out md:flex md:flex-col"
+      className="fixed left-0 top-0 z-30 flex h-screen w-[90px] shrink-0 flex-col border-r border-okb-border bg-okb-bg py-4 transition-all duration-200 ease-in-out md:hidden"
       aria-label="Site navigation"
     >
       <nav className="flex w-full flex-col items-stretch">

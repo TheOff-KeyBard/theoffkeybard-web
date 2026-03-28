@@ -13,9 +13,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="grid min-h-screen grid-cols-1 md:grid-cols-[90px_1fr] lg:grid-cols-[70px_1fr]">
+    <div className="min-h-screen">
       <SiteSidebar />
-      <div className="flex min-h-screen min-w-0 flex-col pb-16 md:pb-0">
+      <div className="flex min-h-screen min-w-0 flex-col pl-[90px] pb-16 md:pl-0 md:pb-0">
         <SiteChrome>{children}</SiteChrome>
         <SiteMobileBottomNav />
       </div>
