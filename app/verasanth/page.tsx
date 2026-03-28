@@ -16,7 +16,7 @@ export default function VerasanthLorePage() {
 
   return (
     <>
-      <section className="bg-okb-bg py-16 md:py-24">
+      <section className="bg-okb-bg pb-16 pt-[15rem] sm:pt-[6.5rem] md:pb-24 md:pt-[6.5rem]">
         <Container size="text" className="space-y-7">
           <h1 className="okb-h1">The City in Fragments</h1>
           <p className="okb-hero-intro max-w-xl">
