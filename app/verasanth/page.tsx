@@ -40,13 +40,10 @@ export default function VerasanthLorePage() {
 
       <section className="bg-okb-bg-elevated py-16 md:py-24">
         <Container size="wide" className="space-y-8">
-          <div className="space-y-3 md:space-y-4">
-            <SectionHeading title="World Archive" />
-            <p className="okb-body max-w-2xl">
-              Lore is shelved by topic. Open the index for every entry — including
-              shelves still being prepared.
-            </p>
-          </div>
+          <p className="okb-body max-w-2xl">
+            Lore is shelved by topic. Open the index for every entry — including
+            shelves still being prepared.
+          </p>
           <ul className="grid grid-cols-1 gap-7 md:grid-cols-2 md:gap-8">
             {shelves.map((s) => (
               <li key={s.slug}>
